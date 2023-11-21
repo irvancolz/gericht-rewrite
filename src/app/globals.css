@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;700&display=swap");
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -38,6 +39,19 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  /* colors */
+  --main-gold-bg-col: #dcca87;
+  --main-dark-bg-col: #040404;
+  --soft-gold-bg-col: rgba(220, 202, 135, 20%);
+  --trans-gold-bg-col: rgba(245, 239, 219, 20%);
+  --soft-gray-bg-col: #aaa;
+  --med-gray-bg-col: #242424;
+  --white-bg-col: #fff;
+
+  /* fonts */
+  --cormorant-font: "Cormorant Upright", serif;
+  --poppins-font: "Poppins", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
