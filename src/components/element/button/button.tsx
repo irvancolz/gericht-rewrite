@@ -1,4 +1,10 @@
-import React, { ComponentProps, PropsWithChildren } from "react";
+"use client";
+import React, {
+  ComponentProps,
+  PropsWithChildren,
+  forwardRef,
+  useRef,
+} from "react";
 import style from "./button.module.css";
 
 export type ButtonProps = {
@@ -6,16 +12,36 @@ export type ButtonProps = {
 } & PropsWithChildren &
   ComponentProps<"button">;
 
-export function Button({
-  variant = "primary",
-  className,
-  children,
-  ...rest
-}: ButtonProps) {
-  const buttonVarClass = variant == "primary" ? style.primary : style.secondary;
-  return (
-    <button {...rest} className={`${style.btn} ${buttonVarClass} ${className}`}>
-      {children}
-    </button>
-  );
-}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, children, ...rest }, ref) => {
+    const buttonVarClass =
+      variant == "primary" ? style.primary : style.secondary;
+
+    const localRef = useRef<HTMLButtonElement | null>(null);
+    const btnRef = ref || localRef;
+    return (
+      <button
+        className={`${style.btn} ${buttonVarClass} ${className}`}
+        ref={btnRef}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);
+
+Button.displayName = "button";
+// export function Button({
+//   variant = "primary",
+//   className,
+//   children,
+//   ...rest
+// }: ButtonProps) {
+//   const buttonVarClass = variant == "primary" ? style.primary : style.secondary;
+//   return (
+//     <button {...rest} className={`${style.btn} ${buttonVarClass} ${className}`}>
+//       {children}
+//     </button>
+//   );
+// }
