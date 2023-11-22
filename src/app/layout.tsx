@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
-import { Cormorant_Upright, Poppins } from "next/font/google";
 import "./globals.css";
+import { Topnav } from "../components";
 
 export default function RootLayout({
   children,
@@ -9,7 +8,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Topnav />
+
+        {children}
+      </body>
     </html>
   );
 }

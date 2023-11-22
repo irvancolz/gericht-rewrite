@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main_nav {
+  display: flex;
+  gap: 1rem;
+
+  /* center the nav */
+  translate: 30%;
+}
+
+.secondary_nav {
+  position: relative;
+  display: flex;
+  padding: 0.25rem 0;
+  width: 25rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.separator {
+  --bg-col: var(--white-bg-col);
+  width: 1.5px;
+  height: 0.8rem;
+  position: relative;
+  background-color: var(--bg-col);
+}
+
+.separator::after,
+.separator::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+}
+
+.separator::after {
+  top: 100%;
+
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 10px solid var(--bg-col);
+}
+.separator::before {
+  bottom: 100%;
+
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 10px solid var(--bg-col);
+}

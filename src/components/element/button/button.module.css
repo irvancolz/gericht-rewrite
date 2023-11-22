@@ -1,0 +1,29 @@
+.btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-out;
+}
+
+.primary {
+  --bg-col: var(--main-gold-bg-col);
+  color: var(--main-dark-bg-col);
+  font-family: var(--cormorant-font);
+  background-color: var(--bg-col);
+  outline-color: transparent;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.primary:hover {
+  background-color: #e8c238;
+}
+
+.secondary {
+  color: var(--white-b-col);
+  font-family: var(--poppins-font);
+  outline-color: transparent;
+  border-color: transparent;
+  background-color: transparent;
+  font-weight: 500;
+}
