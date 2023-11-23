@@ -1,0 +1,32 @@
+/* .contiainer {
+  padding: 8rem 0 9rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8rem;
+} */
+
+.container {
+  max-width: 438px;
+}
+
+.container > img {
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.tagline {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.tagline p {
+  text-align: center;
+}
+
+.tagline > span {
+  display: flex;
+  gap: 0.5rem;
+}

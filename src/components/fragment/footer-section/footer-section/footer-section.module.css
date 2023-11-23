@@ -1,0 +1,15 @@
+.container {
+  width: 19rem;
+  text-align: center;
+}
+
+.container h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-gold-bg-col);
+}
+
+.container > p {
+  color: var(--soft-gray-bg-col);
+  font-weight: 400;
+}

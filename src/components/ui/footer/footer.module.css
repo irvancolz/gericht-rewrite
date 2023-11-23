@@ -35,73 +35,10 @@
   margin-block: 1.5rem 4rem;
 }
 
-.email_form {
-  --bg-col: var(--soft-gray-bg-col);
-  display: flex;
-  width: 80%;
-  gap: 2rem;
-  align-items: center;
-}
-
-.email_form input {
-  font-family: var(--cormorant-font);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--bg-col);
-  outline-color: var(--bg-col);
-  border-color: var(--bg-col);
-  border-width: 1px;
-  padding: 1rem 1.2rem;
-  flex-grow: 1;
-  background-color: var(--accent-dark-bg-col);
-}
 .address {
   padding: 8rem 0 9rem 0;
-}
-.address_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8rem;
-}
-
-.address_section {
-  width: 19rem;
-  text-align: center;
-}
-
-.address_section h3 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent-gold-bg-col);
-}
-
-.address_section > p {
-  color: var(--soft-gray-bg-col);
-  font-weight: 400;
-}
-
-.address_section_center {
-  max-width: 438px;
-}
-
-.address_section_center > img {
-  display: block;
-  margin-inline: auto;
-  margin-bottom: 2rem;
-}
-
-.tagline {
-  display: grid;
-  gap: 1rem;
-  place-items: center;
-}
-
-.tagline p {
-  text-align: center;
-}
-
-.tagline > span {
-  display: flex;
-  gap: 0.5rem;
 }
