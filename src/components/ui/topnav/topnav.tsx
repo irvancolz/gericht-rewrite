@@ -43,7 +43,14 @@ export function Topnav() {
         {mainNavLink.map((item, i) => {
           return (
             <li key={i}>
-              <Link href={item.href}>{item.label}</Link>
+              <Link
+                href={item.href}
+                style={{
+                  fontWeight: 400,
+                }}
+              >
+                {item.label}
+              </Link>
             </li>
           );
         })}

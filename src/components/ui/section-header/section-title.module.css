@@ -1,0 +1,30 @@
+.title,
+.desc {
+  font-family: var(--cormorant-font);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  align-items: flex-start;
+}
+
+.desc {
+  font-size: 4rem;
+  color: var(--main-gold-bg-col);
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.title {
+  font-size: 1.45rem;
+  font-weight: 500;
+}

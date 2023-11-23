@@ -32,16 +32,3 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "button";
-// export function Button({
-//   variant = "primary",
-//   className,
-//   children,
-//   ...rest
-// }: ButtonProps) {
-//   const buttonVarClass = variant == "primary" ? style.primary : style.secondary;
-//   return (
-//     <button {...rest} className={`${style.btn} ${buttonVarClass} ${className}`}>
-//       {children}
-//     </button>
-//   );
-// }

@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Topnav } from "../components";
+import Footer from "@/components/ui/footer/footer";
 
 export default function RootLayout({
   children,
@@ -9,9 +10,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Topnav />
+        <header>
+          <Topnav />
+        </header>
 
         {children}
+
+        <Footer />
       </body>
     </html>
   );

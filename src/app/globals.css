@@ -43,7 +43,9 @@
 
   /* colors */
   --main-gold-bg-col: #dcca87;
+  --accent-gold-bg-col: #f5efdb;
   --main-dark-bg-col: #040404;
+  --accent-dark-bg-col: #0c0c0c;
   --soft-gold-bg-col: rgba(220, 202, 135, 20%);
   --trans-gold-bg-col: rgba(245, 239, 219, 20%);
   --soft-gray-bg-col: #aaa;
@@ -100,6 +102,15 @@ body {
   overflow-x: hidden;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--cormorant-font);
+}
+
 body {
   color: var(--white-bg-col);
   background: var(--main-dark-bg-col);
@@ -115,8 +126,8 @@ li {
   list-style: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
