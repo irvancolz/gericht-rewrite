@@ -61,10 +61,12 @@
 .address_wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 8rem;
 }
 
 .address_section {
-  width: 25rem;
+  width: 19rem;
   text-align: center;
 }
 
@@ -77,4 +79,29 @@
 .address_section > p {
   color: var(--soft-gray-bg-col);
   font-weight: 400;
+}
+
+.address_section_center {
+  max-width: 438px;
+}
+
+.address_section_center > img {
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.tagline {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.tagline p {
+  text-align: center;
+}
+
+.tagline > span {
+  display: flex;
+  gap: 0.5rem;
 }
