@@ -6,7 +6,10 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    const lenis = new Lenis({});
+    const lenis = new Lenis({
+      duration: 1.75,
+      easing: (x: number) => 1 - (1 - x) * (1 - x),
+    });
     function lenisRaf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(lenisRaf);
