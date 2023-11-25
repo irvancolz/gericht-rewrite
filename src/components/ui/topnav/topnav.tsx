@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect, useLayoutEffect } from "react";
 import style from "./topnav.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import gsap from "gsap";
 import { Button } from "@/components";
 
 const mainNavLink = [
@@ -28,8 +30,23 @@ const mainNavLink = [
 ];
 
 export function Topnav() {
+  const container = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(container.current, {
+        opacity: 0,
+        yPercent: -20,
+        duration: 0.3,
+        ease: "sine.out",
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <nav className={style.container}>
+    <nav ref={container} className={style.container}>
       <Link href="/">
         <Image
           src="/assets/svg/gericht-header-logo.svg"
@@ -57,9 +74,13 @@ export function Topnav() {
       </ul>
 
       <div className={style.secondary_nav}>
-        <Button variant="secondary">Login / Registration</Button>
+        <Button className={style.nav_btn} variant="secondary">
+          Login / Registration
+        </Button>
         <span className={style.separator}></span>
-        <Button variant="secondary">Book Table</Button>
+        <Button className={style.nav_btn} variant="secondary">
+          Book Table
+        </Button>
       </div>
     </nav>
   );

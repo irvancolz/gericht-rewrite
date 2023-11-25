@@ -2,7 +2,11 @@
 import styles from "./page.module.css";
 import { Signature } from "@/components";
 import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   useEffect(() => {
@@ -12,6 +16,7 @@ export default function Home() {
     });
     function lenisRaf(time: number) {
       lenis.raf(time);
+      ScrollTrigger.update();
       requestAnimationFrame(lenisRaf);
     }
     requestAnimationFrame(lenisRaf);
