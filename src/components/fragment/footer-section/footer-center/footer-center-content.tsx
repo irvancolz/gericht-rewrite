@@ -1,10 +1,21 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import style from "./footer-center.module.css";
+import { gsap } from "gsap";
 
 export function FooterCenterContent() {
+  const containerRef = useRef(null);
+  useLayoutEffect(() => {
+    const anim = gsap.context(() => {
+      // gsap.from()
+    }, containerRef);
+
+    return () => anim.revert();
+  }, []);
+
   return (
-    <div className={style.container}>
+    <div ref={containerRef} className={style.container}>
       <Image
         src={"/assets/svg/gericht-footer.svg"}
         alt="gericht"
