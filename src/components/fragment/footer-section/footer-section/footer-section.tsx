@@ -1,6 +1,5 @@
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { PropsWithChildren } from "react";
 import style from "./footer-section.module.css";
-
 export type FooterSectionProps = {
   title: string;
 } & PropsWithChildren;

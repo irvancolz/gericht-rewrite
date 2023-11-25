@@ -2,6 +2,7 @@ import React, { FormEvent } from "react";
 import style from "./footer.module.css";
 import {
   Copyright,
+  EmailSubscribtion,
   FooterCenterContent,
   FooterForm,
   FooterSection,
@@ -16,15 +17,7 @@ export default function Footer() {
   return (
     <footer className={style.wrapper}>
       <div className={style.container}>
-        <section className={style.subscribe_email}>
-          <SectionTitle
-            align="center"
-            title="Newsletter"
-            desc="Subscribe to Our Newsletter"
-          />
-          <p>And never miss latest Updates!</p>
-          <FooterForm />
-        </section>
+        <EmailSubscribtion />
         <section className={style.address}>
           <FooterSection title="Contact Us">
             <p

@@ -36,7 +36,7 @@ export function Topnav() {
     const ctx = gsap.context(() => {
       gsap.from(container.current, {
         opacity: 0,
-        yPercent: -20,
+        yPercent: -30,
         duration: 0.3,
         ease: "sine.out",
       });

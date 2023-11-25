@@ -26,5 +26,6 @@
 
 .title {
   font-size: 1.45rem;
+  opacity: 1;
   font-weight: 500;
 }
