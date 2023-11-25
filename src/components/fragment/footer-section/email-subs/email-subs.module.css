@@ -8,4 +8,5 @@
 
 .container > p {
   margin-block: 1.5rem 4rem;
+  opacity: 1;
 }

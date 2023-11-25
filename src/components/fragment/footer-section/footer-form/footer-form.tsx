@@ -8,9 +8,9 @@ function handleSubmit(e: FormEvent) {
   console.log("form submitted");
 }
 
-export function FooterForm() {
+export function FooterForm({ className }: { className?: string }) {
   return (
-    <form className={style.container} onSubmit={handleSubmit}>
+    <form className={`${style.container} ${className}`} onSubmit={handleSubmit}>
       <input type="email" placeholder="Email Address" />
       <Button variant="primary" type="submit">
         Subscribe

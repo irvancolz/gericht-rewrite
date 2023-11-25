@@ -31,8 +31,7 @@ export function SectionTitle({
         stagger: 0.2,
         scrollTrigger: {
           trigger: ".section_title_content",
-          start: "bottom bottom",
-          markers: true,
+          start: "clamp(bottom 80%)",
           toggleActions: "play none none reverse",
         },
       });
