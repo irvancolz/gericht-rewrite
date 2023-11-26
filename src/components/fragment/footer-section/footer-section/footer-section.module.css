@@ -11,15 +11,11 @@
 .container > p {
   color: var(--soft-gray-bg-col);
   font-weight: 400;
-  font-size: 0.75rem;
 }
 
 @media (min-width: 768px) {
   .container h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-  }
-  .container p {
-    font-size: 1rem;
   }
 }

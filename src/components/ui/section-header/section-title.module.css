@@ -5,12 +5,14 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .center {
   justify-content: center;
   align-items: center;
+}
+.center .desc {
+  text-align: center;
 }
 
 .start {
@@ -18,14 +20,26 @@
 }
 
 .desc {
-  font-size: 4rem;
+  font-size: 2rem;
   color: var(--main-gold-bg-col);
   font-weight: 700;
   line-height: 3rem;
 }
 
 .title {
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   opacity: 1;
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: 0.5rem;
+  }
+  .title {
+    font-size: 1.45rem;
+  }
+  .desc {
+    font-size: 4rem;
+  }
 }

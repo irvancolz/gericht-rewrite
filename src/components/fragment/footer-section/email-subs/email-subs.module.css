@@ -7,6 +7,12 @@
 }
 
 .container > p {
-  margin-block: 1.5rem 4rem;
   opacity: 1;
+  margin-block: 0.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .container > p {
+    margin-block: 1.5rem 4rem;
+  }
 }
