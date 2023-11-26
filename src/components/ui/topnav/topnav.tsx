@@ -1,10 +1,10 @@
 "use client";
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect, useState } from "react";
 import style from "./topnav.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
-import { Button } from "@/components";
+import { Button, Signature } from "@/components";
 
 const mainNavLink = [
   {
@@ -31,6 +31,12 @@ const mainNavLink = [
 
 export function Topnav() {
   const container = useRef(null);
+  const mainNav = useRef(null);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    setMenuOpen((e) => !e);
+  }
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -46,20 +52,40 @@ export function Topnav() {
   }, []);
 
   return (
-    <nav ref={container} className={style.container}>
-      <Link href="/">
-        <Image
-          src="/assets/svg/gericht-header-logo.svg"
-          alt="gericht logo"
-          width={160}
-          height={64}
-        />
-      </Link>
+    <nav
+      ref={container}
+      className={`${style.container} ${
+        isMenuOpen ? style.expanded : style.closed
+      }`}
+    >
+      <div>
+        <Link href="/" className={style.main_logo}>
+          <Image
+            src="/assets/svg/gericht-header-logo.svg"
+            alt="gericht logo"
+            width={160}
+            height={64}
+            priority
+          />
+        </Link>
+        <Button
+          variant="secondary"
+          onClick={toggleMenu}
+          className={style.menu_btn}
+        >
+          <Image
+            alt="menu_btn"
+            src={"/assets/svg/sidebar-logo.svg"}
+            height={64}
+            width={64}
+          />
+        </Button>
+      </div>
 
-      <ul className={style.main_nav}>
+      <ul className={style.main_nav} ref={mainNav}>
         {mainNavLink.map((item, i) => {
           return (
-            <li key={i}>
+            <li key={i} className={style.navlink}>
               <Link
                 href={item.href}
                 style={{
@@ -71,6 +97,11 @@ export function Topnav() {
             </li>
           );
         })}
+        <Signature
+          className={`${style.signature} signature ${
+            isMenuOpen ? "" : style.hidden
+          }`}
+        />
       </ul>
 
       <div className={style.secondary_nav}>

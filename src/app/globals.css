@@ -121,6 +121,7 @@ body {
   color: var(--white-bg-col);
   background: var(--main-dark-bg-col);
   font-family: var(--opens-font);
+  position: relative;
 }
 
 a {

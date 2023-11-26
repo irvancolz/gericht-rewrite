@@ -1,77 +1,174 @@
 .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 6.25rem;
-  opacity: 1;
-}
-.main_nav {
-  display: flex;
-  gap: 1rem;
-  opacity: 1;
-  /* center the nav */
-  translate: 30%;
-}
-
-.main_nav li,
-.nav_btn {
-  position: relative;
-}
-
-.main_nav li::after,
-.nav_btn::after {
-  height: 2px;
-  position: absolute;
-  content: "";
-  background-color: var(--main-gold-bg-col);
-  width: 0%;
-  top: 100%;
-  left: 50%;
-  translate: -50%;
-  transition: width 0.2s ease-in-out;
-}
-
-.main_nav li:hover::after,
-.nav_btn:hover::after {
+  flex-direction: column;
+  padding: 2rem;
+  height: 10rem;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+  overflow: hidden;
+}
+.expanded {
+  height: 100vh;
+  background-color: var(--main-dark-bg-col);
+  transition-delay: 0.5s;
+  transition: background-color 0.2s linear, height 0.5s ease-out 0.2s;
 }
 
-.secondary_nav {
-  position: relative;
-  display: flex;
-  padding: 0.25rem 0;
-  width: 25rem;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
+.closed {
+  transition: background-color 0.2s linear 0.5s, height 0.5s ease-out;
 }
 
-.separator {
-  --bg-col: var(--white-bg-col);
-  width: 1.5px;
-  height: 0.8rem;
-  position: relative;
-  background-color: var(--bg-col);
-}
-
-.separator::after,
-.separator::before {
-  content: "";
-  position: absolute;
+.expanded .main_nav {
   background-color: transparent;
 }
 
-.separator::after {
-  top: 100%;
-
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-top: 10px solid var(--bg-col);
+.main_nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: fit-content;
+  opacity: 1;
+  flex-grow: 1;
 }
-.separator::before {
-  bottom: 100%;
 
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-bottom: 10px solid var(--bg-col);
+.secondary_nav {
+  display: none;
+}
+
+.main_logo {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.signature {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  animation: fadein 1s linear;
+}
+
+.menu_btn {
+  margin-left: auto;
+  display: block;
+}
+
+.navlink {
+  overflow: hidden;
+  font-size: 4rem;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem 6.25rem;
+    opacity: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    position: static;
+  }
+
+  .main_logo {
+    display: block;
+  }
+
+  .secondary_nav {
+    position: relative;
+    display: flex;
+    padding: 0.25rem 0;
+    width: fit-content;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .main_nav {
+    gap: 1rem;
+    opacity: 1;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navlink {
+    font-size: 1rem;
+    overflow: auto;
+  }
+
+  .separator {
+    --bg-col: var(--white-bg-col);
+    width: 1.5px;
+    height: 0.8rem;
+    position: relative;
+    background-color: var(--bg-col);
+    display: block;
+  }
+
+  .separator::after,
+  .separator::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .separator::after {
+    top: 100%;
+
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 10px solid var(--bg-col);
+  }
+  .separator::before {
+    bottom: 100%;
+
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 10px solid var(--bg-col);
+  }
+
+  .signature,
+  .menu_btn {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .main_nav li:hover::after,
+  .nav_btn:hover::after {
+    width: 100%;
+  }
+  .main_nav li,
+  .nav_btn {
+    position: relative;
+  }
+
+  .main_nav li::after,
+  .nav_btn::after {
+    height: 2px;
+    position: absolute;
+    content: "";
+    background-color: var(--main-gold-bg-col);
+    width: 0%;
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+    transition: width 0.2s ease-in-out;
+  }
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
 }

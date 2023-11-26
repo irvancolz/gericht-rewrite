@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  z-index: 1000;
   width: fit-content;
   margin-inline: auto;
 }
