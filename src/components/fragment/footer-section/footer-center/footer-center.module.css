@@ -1,19 +1,14 @@
-/* .contiainer {
-  padding: 8rem 0 9rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8rem;
-} */
-
 .container {
   max-width: 438px;
+  margin-top: 1rem;
 }
 
 .container > img {
   display: block;
   margin-inline: auto;
-  margin-bottom: 2rem;
+  scale: 0.5;
+  margin-bottom: 0.5rem;
+  height: 41px;
 }
 
 .tagline {
@@ -24,9 +19,40 @@
 
 .tagline p {
   text-align: center;
+  font-size: 0.75rem;
+}
+
+.tagline p + img {
+  scale: 0.75;
 }
 
 .tagline > span {
   display: flex;
-  gap: 0.5rem;
+  gap: 0;
+}
+
+.tagline > span img {
+  scale: 0.75;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-top: 0;
+  }
+  .container > img {
+    margin-bottom: 2rem;
+    scale: 1;
+  }
+  .tagline p {
+    font-size: 1rem;
+  }
+  .tagline p + img {
+    scale: 1;
+  }
+  .tagline > span {
+    gap: 0.5rem;
+  }
+  .tagline > span img {
+    scale: 1;
+  }
 }

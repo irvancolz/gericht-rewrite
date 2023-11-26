@@ -1,21 +1,11 @@
 "use client";
 import Image from "next/image";
-import React, { useLayoutEffect, useRef } from "react";
+import React from "react";
 import style from "./footer-center.module.css";
-import { gsap } from "gsap";
 
 export function FooterCenterContent() {
-  const containerRef = useRef(null);
-  useLayoutEffect(() => {
-    const anim = gsap.context(() => {
-      // gsap.from()
-    }, containerRef);
-
-    return () => anim.revert();
-  }, []);
-
   return (
-    <div ref={containerRef} className={style.container}>
+    <div className={style.container}>
       <Image
         src={"/assets/svg/gericht-footer.svg"}
         alt="gericht"
@@ -23,9 +13,11 @@ export function FooterCenterContent() {
         width={289}
       />
       <div className={style.tagline}>
-        <p>
-          &ldquo;The best way to find yourself is to lose yourself in the
-          service of others.&rdquo;
+        <p className="footer_tagline">
+          <span className="taglines">
+            &ldquo;The best way to find yourself is to lose yourself in the
+          </span>
+          <span className="taglines"> service of others.&rdquo;</span>
         </p>
         <Image
           src={"/assets/svg/spoon.svg"}

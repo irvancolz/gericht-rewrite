@@ -1,7 +1,6 @@
 .container {
   margin-bottom: 8rem;
   margin: 0 auto;
-  width: 80vw;
   max-width: 1300px;
 }
 
@@ -9,6 +8,7 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
+  padding: 1rem;
 }
 
 .wrapper::after {
@@ -36,9 +36,37 @@
 }
 
 .address {
-  padding: 8rem 0 9rem 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 8rem;
+  align-content: center;
+  padding: 2rem 0;
+  gap: 0.5rem;
+}
+
+.address > *:nth-child(2) {
+  order: 1;
+}
+
+.address > *:not(:nth-child(2)) {
+  flex-basis: 48%;
+}
+@media (min-width: 700px) {
+  .wrapper {
+    padding: 0;
+  }
+  .container {
+    width: 80vw;
+  }
+  .address {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 8rem 0 9rem 0;
+    justify-content: space-between;
+  }
+  .address > *:nth-child(2) {
+    order: 0;
+  }
 }

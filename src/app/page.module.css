@@ -17,7 +17,9 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
 .main {
   max-width: 1920px;
+  padding: 1rem;
   width: 100vw;
 }
