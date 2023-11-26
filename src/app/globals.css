@@ -90,12 +90,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  :root {
-    font-size: 16px;
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -121,7 +115,6 @@ body {
   color: var(--white-bg-col);
   background: var(--main-dark-bg-col);
   font-family: var(--opens-font);
-  position: relative;
 }
 
 a {
@@ -133,8 +126,8 @@ li {
   list-style: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media (min-width: 768px) {
+  :root {
+    font-size: 16px;
   }
-} */
+}

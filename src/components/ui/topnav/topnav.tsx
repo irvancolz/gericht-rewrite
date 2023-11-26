@@ -52,67 +52,69 @@ export function Topnav() {
   }, []);
 
   return (
-    <nav
-      ref={container}
-      className={`${style.container} ${
-        isMenuOpen ? style.expanded : style.closed
-      }`}
-    >
-      <div>
-        <Link href="/" className={style.main_logo}>
-          <Image
-            src="/assets/svg/gericht-header-logo.svg"
-            alt="gericht logo"
-            width={160}
-            height={64}
-            priority
-          />
-        </Link>
-        <Button
-          variant="secondary"
-          onClick={toggleMenu}
-          className={style.menu_btn}
-        >
-          <Image
-            alt="menu_btn"
-            src={"/assets/svg/sidebar-logo.svg"}
-            height={64}
-            width={64}
-          />
-        </Button>
-      </div>
+    <header className={style.header}>
+      <nav
+        ref={container}
+        className={`${style.container} ${
+          isMenuOpen ? style.expanded : style.closed
+        }`}
+      >
+        <div>
+          <Link href="/" className={style.main_logo}>
+            <Image
+              src="/assets/svg/gericht-header-logo.svg"
+              alt="gericht logo"
+              width={160}
+              height={64}
+              priority
+            />
+          </Link>
+          <Button
+            variant="secondary"
+            onClick={toggleMenu}
+            className={style.menu_btn}
+          >
+            <Image
+              alt="menu_btn"
+              src={"/assets/svg/sidebar-logo.svg"}
+              height={64}
+              width={64}
+            />
+          </Button>
+        </div>
 
-      <ul className={style.main_nav} ref={mainNav}>
-        {mainNavLink.map((item, i) => {
-          return (
-            <li key={i} className={style.navlink}>
-              <Link
-                href={item.href}
-                style={{
-                  fontWeight: 400,
-                }}
-              >
-                {item.label}
-              </Link>
-            </li>
-          );
-        })}
-        <Signature
-          className={`${style.signature} signature ${
-            isMenuOpen ? "" : style.hidden
-          }`}
-        />
-      </ul>
+        <ul className={style.main_nav} ref={mainNav}>
+          {mainNavLink.map((item, i) => {
+            return (
+              <li key={i} className={style.navlink}>
+                <Link
+                  href={item.href}
+                  style={{
+                    fontWeight: 400,
+                  }}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
 
-      <div className={style.secondary_nav}>
-        <Button className={style.nav_btn} variant="secondary">
-          Login / Registration
-        </Button>
-        <span className={style.separator}></span>
-        <Button className={style.nav_btn} variant="secondary">
-          Book Table
-        </Button>
-      </div>
-    </nav>
+        <div className={style.secondary_nav}>
+          <Button className={style.nav_btn} variant="secondary">
+            Login / Registration
+          </Button>
+          <span className={style.separator}></span>
+          <Button className={style.nav_btn} variant="secondary">
+            Book Table
+          </Button>
+        </div>
+      </nav>
+      <Signature
+        className={`${style.signature} signature ${
+          isMenuOpen ? "" : style.hidden
+        }`}
+      />
+    </header>
   );
 }

@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  background-image: url("../../public/assets/png/notfound-bg.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.content_wrapper {
+  width: 80%;
+  max-width: 550px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.content_wrapper p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--cormorant-font);
+  text-align: center;
+}
+
+.signature_right,
+.signature_left {
+  position: absolute;
+  animation: fadein 0.5s linear;
+}
+
+.signature_right {
+  top: 20%;
+  right: 4rem;
+}
+
+.signature_left {
+  top: 70%;
+  left: 2rem;
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}

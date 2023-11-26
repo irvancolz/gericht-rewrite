@@ -1,5 +1,5 @@
 "use client";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import { Signature } from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
