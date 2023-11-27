@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import style from "./coming-soon.module.css";
 import { Button, Copyright, Countdown, Signature } from "@/components";
