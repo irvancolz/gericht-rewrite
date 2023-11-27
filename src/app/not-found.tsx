@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import style from "./notfound.module.css";
 import Image from "next/image";
-import { Button, Signature } from "@/components";
+import { Button, Copyright, Signature } from "@/components";
 import Link from "next/link";
 import { gsap } from "gsap";
 
@@ -39,7 +39,7 @@ export default function NotFound() {
           <Link href={"/"}>Back To Home</Link>
         </Button>
       </div>
-
+      <Copyright />
       <Signature rotation="right" className={style.signature_left} />
       <Signature className={style.signature_right} />
     </section>

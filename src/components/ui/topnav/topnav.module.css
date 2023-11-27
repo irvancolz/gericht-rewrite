@@ -54,7 +54,6 @@
 }
 
 .navlink {
-  overflow: hidden;
   font-size: 4rem;
   opacity: 1;
 }
@@ -67,6 +66,24 @@
   width: 100%;
   background-color: transparent;
   overflow: hidden;
+}
+
+.navlink,
+.nav_btn {
+  position: relative;
+}
+
+.navlink::after,
+.nav_btn::after {
+  height: 2px;
+  position: absolute;
+  content: "";
+  background-color: var(--main-gold-bg-col);
+  width: 0%;
+  top: 100%;
+  left: 50%;
+  translate: -50%;
+  transition: width 0.2s ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -103,7 +120,6 @@
 
   .navlink {
     font-size: 1rem;
-    overflow: auto;
   }
 
   .separator {
@@ -150,26 +166,9 @@
 }
 
 @media (hover: hover) {
-  .main_nav li:hover::after,
+  .navlink:hover::after,
   .nav_btn:hover::after {
     width: 100%;
-  }
-  .main_nav li,
-  .nav_btn {
-    position: relative;
-  }
-
-  .main_nav li::after,
-  .nav_btn::after {
-    height: 2px;
-    position: absolute;
-    content: "";
-    background-color: var(--main-gold-bg-col);
-    width: 0%;
-    top: 100%;
-    left: 50%;
-    translate: -50%;
-    transition: width 0.2s ease-in-out;
   }
 }
 
