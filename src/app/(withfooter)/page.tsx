@@ -1,6 +1,6 @@
 "use client";
 import styles from "../page.module.css";
-import { Signature } from "@/components";
+import { HomeHero, Signature } from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -24,8 +24,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div style={{ height: "100vw" }}></div>
-      <Signature rotation="right" />
+      <HomeHero />
     </main>
   );
 }

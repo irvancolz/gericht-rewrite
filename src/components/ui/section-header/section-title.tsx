@@ -32,7 +32,6 @@ export function SectionTitle({
         scrollTrigger: {
           trigger: ".section_title_content",
           start: "clamp(bottom 80%)",
-          toggleActions: "play none none reverse",
         },
       });
     }, containerRef);

@@ -1,0 +1,106 @@
+.container {
+  position: relative;
+  aspect-ratio: 619/688;
+  max-width: 300px;
+  width: 70%;
+}
+
+.container::after,
+.container::before {
+  position: absolute;
+  content: "";
+  background-color: var(--main-gold-bg-col);
+  height: 70%;
+  aspect-ratio: 1;
+  z-index: 1;
+}
+
+.container::after {
+  top: -1rem;
+  right: -1rem;
+}
+
+.container::before {
+  bottom: -1rem;
+  left: -1rem;
+}
+
+.img {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.navigation {
+  position: absolute;
+  width: 100%;
+  display: none;
+  margin-inline: auto;
+}
+
+.show_image {
+  opacity: 1;
+}
+.nav_btn {
+  position: relative;
+  outline-color: transparent;
+  border-color: transparent;
+  background-color: transparent;
+  font-family: var(--cormorant-font);
+  color: var(--main-gold-bg-col);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0.25rem;
+  transition: margin 0.2s ease-in-out;
+}
+
+.active_btn {
+  margin-inline: 1rem;
+}
+
+.nav_btn::after,
+.nav_btn::before {
+  content: "";
+  position: absolute;
+  width: 0.25rem;
+  height: 2px;
+  background-color: var(--main-gold-bg-col);
+  width: 0;
+  transition: width 0.2s ease-in-out;
+  top: 50%;
+}
+
+.nav_btn::after {
+  left: calc(100% + 0.25rem);
+}
+.nav_btn::before {
+  right: calc(100% + 0.25rem);
+}
+
+.nav_btn[data-active="true"] {
+  margin-inline: 1rem;
+}
+
+.nav_btn[data-active="true"]:not(:last-child)::after,
+.nav_btn[data-active="true"]:not(:first-child)::before {
+  width: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: calc(100% + 3rem);
+    left: calc(-100% - 5rem);
+  }
+}
