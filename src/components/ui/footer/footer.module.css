@@ -20,7 +20,7 @@
   right: 0;
   z-index: -1;
   background-image: url("../../../../public/assets/png/footer-bg.png");
-  filter: brightness(0.6);
+  filter: brightness(0.3);
 }
 
 .subscribe_email {

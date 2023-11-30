@@ -4,9 +4,7 @@ import {
   Copyright,
   EmailSubscribtion,
   FooterCenterContent,
-  FooterForm,
   FooterSection,
-  SectionTitle,
 } from "@/components";
 
 export default function Footer() {
