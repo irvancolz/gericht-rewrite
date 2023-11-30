@@ -5,9 +5,11 @@ import {
   Button,
   HOME_HERO_IMAGE_SRC,
   HomeHeroCarousel,
+  Scroller,
   SectionTitle,
 } from "@/components";
 import { gsap } from "gsap";
+import Link from "next/link";
 
 export function HomeHero() {
   const container = useRef(null);
@@ -46,7 +48,7 @@ export function HomeHero() {
     return () => animation.revert();
   }, []);
 
-  // if not done the section header will disappear
+  // if not done the section header wont shown at begining
   useEffect(() => {
     window.scrollTo({ top: 12 });
   }, []);
@@ -62,6 +64,10 @@ export function HomeHero() {
   return (
     <div className={style.container} ref={container}>
       <div className={style.content_wrapper}>
+        <nav className={style.page_nav} aria-label="secondary_nav">
+          <Link href={"/coming-soon"}>#Bar</Link>
+          <Link href={"/"}>#Gericht</Link>
+        </nav>
         <div>
           <SectionTitle
             align="left"
@@ -77,7 +83,10 @@ export function HomeHero() {
             Explore Menu
           </Button>
         </div>
-        <HomeHeroCarousel activeTabs={activeSlide} />
+        <HomeHeroCarousel
+          activeTabs={activeSlide}
+          setActiveTabs={updateSlide}
+        />
       </div>
     </div>
   );

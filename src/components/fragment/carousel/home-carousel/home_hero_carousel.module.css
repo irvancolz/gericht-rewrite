@@ -48,6 +48,7 @@
   opacity: 1;
 }
 .nav_btn {
+  cursor: pointer;
   position: relative;
   outline-color: transparent;
   border-color: transparent;

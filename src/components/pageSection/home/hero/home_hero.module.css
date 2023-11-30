@@ -22,9 +22,29 @@
   margin-block: 2rem;
 }
 
+.page_nav {
+  position: absolute;
+  left: calc(100% - 6rem);
+  top: 50%;
+  rotate: 270deg;
+  width: fit-content;
+}
+
+.page_nav > * {
+  margin: 0.5rem;
+}
+
 @media (min-width: 768px) {
   .content_wrapper {
     flex-direction: row;
     gap: 0;
   }
+  .page_nav {
+    left: 0;
+    top: 50%;
+  }
+}
+
+.scroller {
+  bottom: 2rem;
 }

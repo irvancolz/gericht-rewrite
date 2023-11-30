@@ -11,18 +11,29 @@ export const HOME_HERO_IMAGE_SRC = [
   "/assets/png/home_hero_3.png",
 ];
 
-export function HomeHeroCarousel({ activeTabs = 1 }: { activeTabs: number }) {
+export function HomeHeroCarousel({
+  activeTabs = 1,
+  setActiveTabs,
+}: {
+  activeTabs: number;
+  setActiveTabs: (i: number) => void;
+}) {
   const container = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(container.current, {
+      const tl = gsap.timeline();
+      tl.from(container.current, {
         opacity: 0,
         yPercent: 10,
         duration: 0.5,
         delay: 0.3,
+      }).from(".carousel_btn", {
+        opacity: 0,
+        y: 20,
+        stagger: 0.1,
       });
-    });
+    }, container);
 
     return () => ctx.revert();
   }, []);
@@ -52,8 +63,9 @@ export function HomeHeroCarousel({ activeTabs = 1 }: { activeTabs: number }) {
           return (
             <button
               key={i}
-              className={`${style.nav_btn}`}
+              className={`${style.nav_btn} carousel_btn`}
               data-active={activeTabs == i + 1}
+              onClick={() => setActiveTabs(i + 1)}
             >
               {`0${i + 1}`}
             </button>
