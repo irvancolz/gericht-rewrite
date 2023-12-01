@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  width: 2rem;
+  height: 0.5rem;
+  border: 1px red;
+  z-index: 1;
+}
+
+.left {
+  rotate: 0deg;
+}
+
+.right {
+  rotate: 180deg;
+}
+
+.spoon_img {
+  border: 1px dashed #eee;
+}

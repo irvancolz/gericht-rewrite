@@ -1,6 +1,6 @@
 "use client";
 import styles from "../page.module.css";
-import { HomeHero, Signature } from "@/components";
+import { About, HomeHero } from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -25,6 +25,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <HomeHero />
+      <About />
     </main>
   );
 }

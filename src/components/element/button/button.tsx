@@ -8,12 +8,12 @@ import React, {
 import style from "./button.module.css";
 
 export type ButtonProps = {
-  variant: "primary" | "secondary";
+  variant?: "primary" | "secondary";
 } & PropsWithChildren &
   ComponentProps<"button">;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, children, ...rest }, ref) => {
+  ({ className, variant = "primary", children, ...rest }, ref) => {
     const buttonVarClass =
       variant == "primary" ? style.primary : style.secondary;
 
