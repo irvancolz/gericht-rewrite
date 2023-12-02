@@ -43,7 +43,7 @@ export function Topnav() {
       gsap.from(container.current, {
         opacity: 0,
         yPercent: -30,
-        duration: 0.3,
+        duration: 0.5,
         ease: "sine.out",
       });
     });
