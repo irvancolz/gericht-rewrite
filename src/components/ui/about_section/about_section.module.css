@@ -32,6 +32,10 @@
     align-items: flex-start;
   }
 
+  .left p {
+    text-align: start;
+  }
+
   .right {
     align-items: flex-end;
   }
