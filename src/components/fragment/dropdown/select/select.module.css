@@ -1,0 +1,37 @@
+.btn {
+  font-family: var(--cormorant-font);
+  color: var(--main-gold-bg-col);
+  font-size: 1rem;
+  outline-color: transparent;
+  border: 1px solid var(--trans-gold-bg-col);
+  background-color: var(--main-dark-bg-col);
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: var(--accend-dark-bg-col);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-color: var(--main-gold-bg-col);
+  aspect-ratio: 1;
+  width: 0.75rem;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  rotate: -45deg;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    text-align: start;
+  }
+}

@@ -9,7 +9,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 
 export type SectionTitleProps = {
-  align: "center" | "left";
+  align?: "center" | "left";
   title: string;
   desc: string;
 } & ComponentPropsWithoutRef<"div">;
@@ -17,7 +17,7 @@ export type SectionTitleProps = {
 export function SectionTitle({
   title,
   desc,
-  align,
+  align = "center",
   ...rest
 }: SectionTitleProps) {
   const alignment = align == "center" ? style.center : style.left;

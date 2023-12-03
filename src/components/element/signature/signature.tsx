@@ -11,7 +11,12 @@ export function Signature({
 } & ComponentPropsWithoutRef<"div">) {
   const text = "DELIGHT IN EVERY BITE ".split("");
   return (
-    <div className={className}>
+    <div
+      className={className}
+      style={{
+        width: "fit-content",
+      }}
+    >
       <div className={style.container}>
         <p
           className={`${style.text_wrapper} ${

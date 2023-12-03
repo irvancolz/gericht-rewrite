@@ -1,0 +1,25 @@
+.container {
+  background-color: var(--main-dark-bg-col);
+  padding: 1rem;
+  border: 1px solid var(--trans-gold-bg-col);
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  font-family: var(--cormorant-font);
+  color: var(--main-gold-bg-col);
+  font-size: 1rem;
+}
+
+.container:hover {
+  background-color: var(--accent-dark-bg-col);
+}
+
+.container * {
+  cursor: pointer;
+}
+
+.container input {
+  appearance: none;
+  visibility: none;
+  display: none;
+}

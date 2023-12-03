@@ -18,8 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Topnav />
-
         {isPageLoaded && children}
+        <div id="modal_container"></div>
       </body>
     </html>
   );
