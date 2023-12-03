@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import style from "./reservations.module.css";
 import { SectionTitle } from "..";
 import { Button, Signature } from "@/components";
 import { Dropdown, OptionProps } from "@/components/fragment";
+import DatePicker from "react-datepicker";
 
 const personsCount: OptionProps[] = [
   { label: "1 Person", value: "1", logo: "" },
@@ -12,6 +14,7 @@ const personsCount: OptionProps[] = [
 ];
 
 export function Reservation() {
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <div className={style.container}>
       <div className={style.content_wrappper}>
@@ -21,13 +24,21 @@ export function Reservation() {
             values={personsCount}
             defaultsValue={{ label: "1 Person", value: "1" }}
           />
-          <Dropdown
-            values={personsCount}
-            defaultsValue={{ label: "1 Person", value: "1" }}
+          <DatePicker
+            onChange={(a) => setStartDate(a!!)}
+            selected={startDate}
+            shouldCloseOnSelect={false}
+            className={style.datepicker}
           />
-          <Dropdown
-            values={personsCount}
-            defaultsValue={{ label: "1 Person", value: "1" }}
+          <DatePicker
+            onChange={(a) => setStartDate(a!!)}
+            selected={startDate}
+            shouldCloseOnSelect={false}
+            dateFormat={"HH:mm aa"}
+            showTimeSelect
+            showTimeSelectOnly
+            icon={<span className={style.datepicker_select}>helo</span>}
+            className={style.datepicker}
           />
         </div>
         <Button>Book Now</Button>

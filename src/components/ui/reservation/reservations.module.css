@@ -35,7 +35,34 @@
 }
 
 .options > * {
-  flex-grow: 1;
+  flex-basis: 30%;
+}
+
+.datepicker {
+  color: var(--main-gold-bg-col);
+  font-family: var(--cormorant-font);
+  background-color: var(--main-dark-bg-col);
+  outline-color: transparent;
+  border: 1px solid var(--trans-gold-bg-col);
+  font-size: 1rem;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.datepicker_select {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-color: var(--main-gold-bg-col);
+  aspect-ratio: 1;
+  width: 0.75rem;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  rotate: -45deg;
+  pointer-events: none;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -55,6 +82,14 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
+  }
+
+  .options > * {
+    flex-basis: 100%;
+  }
+
+  .datepicker {
+    text-align: start;
   }
 
   .signature {

@@ -1,7 +1,8 @@
 "use client";
 import "./globals.css";
+import "react-datepicker/dist/react-datepicker.css";
 import { Topnav } from "../components";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function RootLayout({
   children,
