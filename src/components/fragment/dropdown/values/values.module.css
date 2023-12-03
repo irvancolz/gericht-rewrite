@@ -1,12 +1,9 @@
 .container {
-  position: fixed;
-  height: fit-content;
-  z-index: 999;
-  /* 
-  top: 50%;
-  left: 50%; */
+  position: absolute;
+  display: none;
+  width: 100%;
 }
 
-.hide {
-  display: none;
+.container[data-show="true"] {
+  display: block;
 }

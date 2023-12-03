@@ -1,15 +1,11 @@
 "use client";
-import React, {
-  ComponentProps,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { ComponentProps, useEffect, useRef, useState } from "react";
 import { OptionProps } from "..";
 import style from "./select.module.css";
 import { useDropdown } from "../dropdown/context";
 import { DropdownValues } from "../values";
+import { usePopper } from "react-popper";
+import { createPortal } from "react-dom";
 
 export type SelectProps = {
   values: OptionProps[];
@@ -18,30 +14,44 @@ export type SelectProps = {
 
 export function Select({ values, defaultsValue }: SelectProps) {
   const ctx = useDropdown();
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [xPos, setXPos] = useState<number>(0);
-  const [yPos, setYPos] = useState<number>(0);
-  const [width, setWidth] = useState<number>(0);
+
+  const [dropdownTrigger, setDropdownTrigger] = useState<HTMLDivElement | null>(
+    null
+  );
+  const [toolTip, setTooltip] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     ctx?.updateValue(defaultsValue?.label!!);
   }, []);
 
-  function updateModal() {
-    const coord = containerRef.current?.getBoundingClientRect();
-
-    setXPos(coord?.left!!);
-    setYPos(coord?.top!! + containerRef.current?.clientHeight!!);
-    setWidth(containerRef.current?.clientWidth!!);
-    ctx?.toggleListExpand();
-  }
+  const { attributes, styles, state } = usePopper(dropdownTrigger, toolTip, {
+    placement: "bottom-start",
+    strategy: "fixed",
+    modifiers: [
+      {
+        name: "offset",
+        options: {
+          offset: [0, 8],
+        },
+      },
+    ],
+  });
 
   return (
-    <div ref={containerRef}>
-      <button className={style.btn} onClick={updateModal}>
+    <div ref={setDropdownTrigger} className={style.container}>
+      <button className={style.btn} onClick={ctx?.toggleListExpand}>
         <span className="selected-value">{ctx?.value}</span>
       </button>
-      <DropdownValues list={values} width={width} x={xPos} y={yPos} />
+
+      <DropdownValues
+        ref={setTooltip}
+        list={values}
+        width={0}
+        x={0}
+        y={0}
+        style={styles.popper}
+        {...attributes.popper}
+      />
     </div>
   );
 }

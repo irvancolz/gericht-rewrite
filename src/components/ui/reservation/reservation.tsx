@@ -28,7 +28,8 @@ export function Reservation() {
             onChange={(a) => setStartDate(a!!)}
             selected={startDate}
             shouldCloseOnSelect={false}
-            className={style.datepicker}
+            className={`${style.datepicker} e-datepicker`}
+            // wrapperClassName={style.datepicker}
           />
           <DatePicker
             onChange={(a) => setStartDate(a!!)}
