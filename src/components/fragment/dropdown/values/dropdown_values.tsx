@@ -12,7 +12,7 @@ export type DropdownValuesProps = {
 } & ComponentProps<"ul">;
 
 export const DropdownValues = forwardRef<any, DropdownValuesProps>(
-  ({ list }, ref) => {
+  ({ list, x, y, width }, ref) => {
     const ctx = useDropdown();
     const defaultRef = useRef<HTMLElement | null>(null);
 
@@ -22,6 +22,11 @@ export const DropdownValues = forwardRef<any, DropdownValuesProps>(
         ref={containerRef}
         className={style.container}
         data-show={ctx?.listExpanded}
+        style={{
+          left: `${x}px`,
+          top: `${y}px`,
+          width: `${width}px`,
+        }}
       >
         {list.map((v, i) => {
           return <Option key={i} label={v.label} value={v.value} />;
