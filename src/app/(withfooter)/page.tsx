@@ -1,6 +1,6 @@
 "use client";
 import styles from "../page.module.css";
-import { About, HomeHero, Reservation } from "@/components";
+import { About, HomeHero, MenuGroup, Reservation } from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.3,
+      duration: 0.5,
       easing: (x: number) => 1 - (1 - x) * (1 - x),
     });
     function lenisRaf(time: number) {
@@ -27,6 +27,7 @@ export default function Home() {
       <HomeHero />
       <About />
       <Reservation />
+      <MenuGroup />
     </main>
   );
 }

@@ -3,6 +3,17 @@
   position: relative;
 }
 
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 0;
+  background-image: url("../../../../public/assets/svg/wave\ element.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  translate: -50%;
+  z-index: -1;
+}
+
 .content_wrappper {
   background-color: var(--accent-dark-bg-col);
   margin-inline: 1rem;
