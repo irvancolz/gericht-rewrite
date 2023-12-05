@@ -108,7 +108,10 @@ export function MenuGroup() {
                 updateModalImage(menu.photoUrl);
                 setMenuIdx(i + 1);
               }}
-              onMouseLeave={() => setBlurred(false)}
+              onMouseLeave={() => {
+                setPreviewShowed(false);
+                setBlurred(false);
+              }}
               className={`${style.menu_list} menu_links`}
             >
               <span>

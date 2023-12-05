@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  width: 100%;
+  padding-block: 0.5rem;
+}
+
+.container:hover {
+  background-color: var(--accent-dark-bg-col);
+}
+
+.name_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+.name_wrapper > span {
+  height: 1px;
+  background-color: #fff;
+  flex-grow: 1;
+}
+
+.price,
+.name {
+  font-family: var(--cormorant-font);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.name {
+  color: var(--main-gold-bg-col);
+}
+
+.ingredients {
+  font-weight: 300;
+  color: var(--soft-gray-bg-col);
+  font-size: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  height: fit-content;
+  align-items: center;
+}
+
+.separator {
+  position: relative;
+  height: 1em;
+  width: 1px;
+  background-color: var(--soft-gray-bg-col);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-block: 1.625rem;
+  }
+}
