@@ -15,8 +15,8 @@ export function HomeHero() {
   const [activeSlide, setActiveSlide] = useState(1);
 
   function updateSlide(i: number) {
-    if (i > HOME_HERO_IMAGE_SRC.length) {
-      setActiveSlide(1);
+    if (i > HOME_HERO_IMAGE_SRC.length - 1) {
+      setActiveSlide(0);
       return;
     }
     setActiveSlide(i);

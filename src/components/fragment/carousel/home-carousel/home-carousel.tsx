@@ -46,7 +46,7 @@ export function HomeHeroCarousel({
             <button
               key={i}
               className={`${style.nav_btn} carousel_btn`}
-              data-active={activeTabs == i + 1}
+              data-active={activeTabs == i}
               onClick={() => setActiveTabs(i + 1)}
             >
               {`0${i + 1}`}

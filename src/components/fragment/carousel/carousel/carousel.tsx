@@ -5,7 +5,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 
 export function Carousel({
-  activeTabs = 1,
+  activeTabs = 0,
   images = [],
 }: {
   images: string[];
@@ -33,7 +33,7 @@ export function Carousel({
           <span
             key={i}
             className={`${style.img} ${
-              activeTabs == i + 1 ? style.show_image : ""
+              activeTabs == i ? style.show_image : ""
             }`}
           >
             <Image
