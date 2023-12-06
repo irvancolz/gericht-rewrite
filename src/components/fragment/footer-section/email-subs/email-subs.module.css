@@ -5,6 +5,8 @@
   align-items: center;
   background-color: var(--accent-dark-bg-col);
   border: 1px solid var(--trans-gold-bg-col);
+  position: relative;
+  width: 100%;
 }
 
 .container > p {

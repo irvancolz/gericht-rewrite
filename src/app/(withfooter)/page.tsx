@@ -1,6 +1,13 @@
 "use client";
 import styles from "../page.module.css";
-import { About, Drinks, HomeHero, MenuGroup, Reservation } from "@/components";
+import {
+  About,
+  ChefWord,
+  Drinks,
+  HomeHero,
+  MenuGroup,
+  Reservation,
+} from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -29,6 +36,7 @@ export default function Home() {
       <Reservation />
       <MenuGroup />
       <Drinks />
+      <ChefWord />
     </main>
   );
 }

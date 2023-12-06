@@ -1,9 +1,8 @@
 "use client";
 import React, { useLayoutEffect, useRef } from "react";
 import style from "./home_hero_carousel.module.css";
-import Image from "next/image";
 import { gsap } from "gsap";
-import { Button } from "@/components";
+import { Carousel } from "../carousel";
 
 export const HOME_HERO_IMAGE_SRC = [
   "/assets/png/home_hero_1.png",
@@ -40,24 +39,7 @@ export function HomeHeroCarousel({
 
   return (
     <div ref={container} className={style.container}>
-      {HOME_HERO_IMAGE_SRC.map((img, i) => {
-        return (
-          <span
-            key={i}
-            className={`${style.img} ${
-              activeTabs == i + 1 ? style.show_image : ""
-            }`}
-          >
-            <Image
-              alt="hero_carousel_image"
-              src={img}
-              priority
-              fill
-              sizes="cover"
-            />
-          </span>
-        );
-      })}
+      <Carousel activeTabs={activeTabs} images={HOME_HERO_IMAGE_SRC} />
       <div className={style.navigation}>
         {HOME_HERO_IMAGE_SRC.map((src, i) => {
           return (

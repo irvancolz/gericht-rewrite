@@ -6,3 +6,4 @@ export * from "./about_section";
 export * from "./reservation";
 export * from "./menu_group";
 export * from "./drinks";
+export * from "./chef_words";

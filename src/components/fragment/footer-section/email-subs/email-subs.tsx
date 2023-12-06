@@ -15,7 +15,6 @@ export function EmailSubscribtion() {
         scrollTrigger: {
           start: "clamp(top 80%)",
           trigger: ".email_subs_content",
-          toggleActions: "play none none reverse",
         },
       });
     }, containerRef);

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins&display=swap");
 :root {
   font-size: 12px;
   --max-width: 1100px;
@@ -55,6 +55,7 @@
   /* fonts */
   --cormorant-font: "Cormorant Upright", serif;
   --opens-font: "Open Sans", sans-serif;
+  --poppins-font: "Poppins", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

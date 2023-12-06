@@ -18,8 +18,8 @@
 
 .container {
   margin-bottom: 8rem;
-  margin: 0 auto;
   max-width: 1300px;
+  margin-inline: auto;
 }
 
 .subscribe_email {
@@ -56,7 +56,7 @@
     padding: 0;
   }
   .container {
-    width: 80vw;
+    width: 80%;
   }
   .address {
     flex-direction: row;

@@ -5,7 +5,6 @@ import {
   Button,
   HOME_HERO_IMAGE_SRC,
   HomeHeroCarousel,
-  Scroller,
   SectionTitle,
 } from "@/components";
 import { gsap } from "gsap";

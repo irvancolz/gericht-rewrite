@@ -1,11 +1,28 @@
 .container {
   position: relative;
-  width: 100%;
-  margin: auto;
+  aspect-ratio: 619/688;
+  max-width: 300px;
+  width: 70%;
 }
 
-.container > *:first-child {
-  margin-inline: auto;
+.container::after,
+.container::before {
+  position: absolute;
+  content: "";
+  background-color: var(--main-gold-bg-col);
+  height: 70%;
+  aspect-ratio: 1;
+  z-index: 1;
+}
+
+.container::after {
+  top: -1rem;
+  right: -1rem;
+}
+
+.container::before {
+  bottom: -1rem;
+  left: -1rem;
 }
 
 .img {
@@ -21,9 +38,10 @@
 }
 
 .navigation {
-  display: none;
   position: absolute;
-  translate: calc(50vw - 10rem);
+  width: 100%;
+  display: none;
+  margin-inline: auto;
 }
 
 .show_image {
@@ -78,7 +96,6 @@
 @media (min-width: 768px) {
   .container {
     width: 100%;
-    margin: 0;
   }
   .navigation {
     display: flex;
