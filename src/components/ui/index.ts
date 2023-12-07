@@ -7,3 +7,4 @@ export * from "./reservation";
 export * from "./menu_group";
 export * from "./drinks";
 export * from "./chef_words";
+export * from "./testimony";

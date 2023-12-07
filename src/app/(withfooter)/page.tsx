@@ -7,6 +7,7 @@ import {
   HomeHero,
   MenuGroup,
   Reservation,
+  Testimony,
 } from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
@@ -37,6 +38,7 @@ export default function Home() {
       <MenuGroup />
       <Drinks />
       <ChefWord />
+      <Testimony />
     </main>
   );
 }

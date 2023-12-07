@@ -1,0 +1,123 @@
+.container {
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding-block: 4rem;
+}
+
+.content_wrapper {
+  max-width: 1300px;
+  width: calc(100% - 2rem);
+}
+
+.image {
+  aspect-ratio: 1;
+  display: block;
+  min-width: 8rem;
+  position: relative;
+  flex-grow: 1;
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  aspect-ratio: 1;
+  width: 2rem;
+  background-image: url("../../../../public/assets/svg/quotes.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.testimony_container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonies {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.testimonies:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.testimonies:nth-child(odd) .name,
+.testimonies:nth-child(odd) .comment,
+.testimonies:nth-child(odd) .job {
+  text-align: end;
+}
+
+.testimonies:nth-child(odd) .image::after {
+  right: auto;
+  left: -1rem;
+}
+
+.comment {
+  color: var(--soft-gray-bg-col);
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-family: var(--cormorant-font);
+  font-size: 2rem;
+  color: var(--main-gold-bg-col);
+}
+
+.signature {
+  scale: 0.65;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-block: 9rem;
+  }
+  .content_wrapper {
+    width: 80vw;
+  }
+
+  .testimonies {
+    flex-basis: 47%;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+  }
+
+  .image {
+    width: 190px;
+  }
+
+  .testimony_container {
+    margin-top: 4rem;
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .testimonies:nth-child(odd) {
+    flex-direction: row;
+  }
+  .testimonies:nth-child(odd) .name,
+  .testimonies:nth-child(odd) .comment,
+  .testimonies:nth-child(odd) .job {
+    text-align: start;
+  }
+
+  .testimonies:nth-child(odd) .image::after {
+    left: auto;
+    right: -1rem;
+  }
+
+  .signature {
+    scale: 1;
+  }
+}
