@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./testimony.module.css";
 import { SectionTitle } from "..";
-import { Signature } from "@/components";
+import { CustomerTestimonies, Signature } from "@/components";
 import Image from "next/image";
 
 const TESTIMONIES = [
@@ -42,20 +42,7 @@ export function Testimony() {
         <SectionTitle title="Testimony" desc="Happy customers" />
         <div className={style.testimony_container}>
           {TESTIMONIES.map((user, i) => {
-            return (
-              <div key={i} className={style.testimonies}>
-                <span className={style.image}>
-                  <Image alt="customer" src={user.imgUrl} fill />
-                </span>
-                <div>
-                  <p className={style.comment}>
-                    <i>{user.testimony}</i>
-                  </p>
-                  <p className={style.name}>{user.name}</p>
-                  <p className={style.job}>{user.job}</p>
-                </div>
-              </div>
-            );
+            return <CustomerTestimonies key={i} {...user} />;
           })}
         </div>
       </section>
