@@ -70,7 +70,7 @@
   line-height: 1.5rem;
 }
 
-.title span {
+.title span:last-child {
   font-family: var(--opens-font);
   color: var(--white-bg-col);
   font-size: 1rem;

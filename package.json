@@ -17,13 +17,15 @@
     "react-datepicker": "^4.24.0",
     "react-dom": "^18",
     "react-popper": "^2.3.0",
-    "split-type": "^0.3.4"
+    "split-type": "^0.3.4",
+    "splitting": "^1.0.6"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-datepicker": "^4.19.3",
     "@types/react-dom": "^18",
+    "@types/splitting": "^1.0.5",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "typescript": "^5"
