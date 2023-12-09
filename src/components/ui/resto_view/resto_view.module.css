@@ -8,4 +8,11 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
+  scale: 0.5;
+}
+
+@media (min-width: 768px) {
+  .signature {
+    scale: 1;
+  }
 }
