@@ -6,3 +6,4 @@ export * from "./scroller";
 export * from "./spoon";
 export * from "./drink_detail";
 export * from "./testimonies";
+export * from "./resto_video";

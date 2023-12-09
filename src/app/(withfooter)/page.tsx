@@ -7,6 +7,7 @@ import {
   HomeHero,
   MenuGroup,
   Reservation,
+  Restoview,
   Testimony,
 } from "@/components";
 import Lenis from "@studio-freight/lenis";
@@ -39,6 +40,7 @@ export default function Home() {
       <Drinks />
       <ChefWord />
       <Testimony />
+      <Restoview />
     </main>
   );
 }

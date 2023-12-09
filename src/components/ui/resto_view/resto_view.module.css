@@ -1,0 +1,11 @@
+.container {
+  width: 100vw;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.signature {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
