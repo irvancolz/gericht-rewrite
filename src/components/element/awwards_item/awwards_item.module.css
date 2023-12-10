@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  max-width: 17.5rem;
+}
+
+.image {
+  position: relative;
+  aspect-ratio: 1;
+  height: 5rem;
+}
+
+.title {
+  font-family: var(--cormorant-font);
+  font-weight: 700;
+  color: var(--main-gold-bg-col);
+  font-size: 1.5rem;
+}
+
+.desc {
+  color: var(--soft-gray-bg-col);
+}

@@ -9,3 +9,4 @@ export * from "./drinks";
 export * from "./chef_words";
 export * from "./testimony";
 export * from "./resto_view";
+export * from "./awards";
