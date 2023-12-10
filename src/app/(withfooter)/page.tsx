@@ -34,14 +34,14 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* <HomeHero />
+      <HomeHero />
       <About />
       <Reservation />
       <MenuGroup />
       <Drinks />
       <ChefWord />
       <Testimony />
-      <Restoview /> */}
+      <Restoview />
       <Awards />
     </main>
   );
