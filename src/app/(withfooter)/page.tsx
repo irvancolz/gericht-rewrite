@@ -21,8 +21,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.5,
-      easing: (x: number) => 1 - (1 - x) * (1 - x),
+      duration: 0.75,
+      easing: (x: number) => Math.sin((x * Math.PI) / 2),
     });
     function lenisRaf(time: number) {
       lenis.raf(time);
