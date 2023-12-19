@@ -10,6 +10,7 @@ import {
   Reservation,
   Restoview,
   Testimony,
+  PhotoGalery,
 } from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
@@ -21,14 +22,20 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.75,
+      duration: 1.5,
       easing: (x: number) => Math.sin((x * Math.PI) / 2),
     });
+
     function lenisRaf(time: number) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(lenisRaf);
     }
+
+    lenis.on("scroll", () => {
+      ScrollTrigger.update();
+    });
+
     requestAnimationFrame(lenisRaf);
   }, []);
 
@@ -43,6 +50,7 @@ export default function Home() {
       <Testimony />
       <Restoview />
       <Awards />
+      <PhotoGalery />
     </main>
   );
 }

@@ -8,3 +8,4 @@ export * from "./drink_detail";
 export * from "./testimonies";
 export * from "./resto_video";
 export * from "./awwards_item";
+export * from "./photo_gallery_img";

@@ -1,0 +1,31 @@
+.container {
+  padding-block: 2rem;
+  margin-inline: auto;
+  width: calc(100% - 2rem);
+  max-width: 1300px;
+  display: flex;
+  gap: 4rem;
+  overflow-x: hidden;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.slider {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-block: 7rem;
+    width: 80vw;
+  }
+  .desc {
+    min-width: 30em;
+  }
+}

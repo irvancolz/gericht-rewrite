@@ -51,6 +51,11 @@
   --soft-gray-bg-col: #aaa;
   --med-gray-bg-col: #242424;
   --white-bg-col: #fff;
+  --dark-overlay-bg: linear-gradient(
+    208deg,
+    rgba(0, 0, 0, 0.75) 1.5%,
+    rgba(0, 0, 0, 0.64) 98.62%
+  );
 
   /* fonts */
   --cormorant-font: "Cormorant Upright", serif;
