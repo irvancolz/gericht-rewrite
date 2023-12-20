@@ -59,7 +59,6 @@ export function MenuGroup() {
         scrollTrigger: {
           trigger: menusRef.current,
           start: "top center",
-          toggleActions: "play none none reverse",
         },
       });
     }, menusRef);

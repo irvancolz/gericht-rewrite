@@ -27,7 +27,7 @@ export function SectionTitle({
     const ctx = gsap.context(() => {
       gsap.from(".section_title_content", {
         opacity: 0,
-        y: 20,
+        yPercent: 100,
         stagger: 0.1,
         scrollTrigger: {
           trigger: ".section_title_content",
