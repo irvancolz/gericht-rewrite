@@ -26,6 +26,8 @@ export function Select({ values, defaultsValue, className }: SelectProps) {
 
   useEffect(() => {
     ctx?.updateValue(defaultsValue?.label!!);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function updateModal() {
