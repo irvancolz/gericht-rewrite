@@ -21,4 +21,19 @@ html.lenis {
 .main {
   max-width: 1920px;
   width: 100vw;
+  position: relative;
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+  background: url("../../public/assets/svg/full_size_wave_element.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  translate: 0 100vh;
 }

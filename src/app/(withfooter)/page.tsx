@@ -11,6 +11,7 @@ import {
   Restoview,
   Testimony,
   PhotoGalery,
+  Blog,
 } from "@/components";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
@@ -51,6 +52,7 @@ export default function Home() {
       <Restoview />
       <Awards />
       <PhotoGalery />
+      <Blog />
     </main>
   );
 }
