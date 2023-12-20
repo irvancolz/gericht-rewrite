@@ -33,27 +33,17 @@ export function PhotoGalery() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from("[data-item='img']", {
+      gsap.from("[data-item='desc']", {
         opacity: 0,
-        x: 25,
+        y: 30,
         duration: 0.3,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "clamp(top center)",
-        },
-      });
-      gsap.to("[data-item='desc']", {
-        opacity: 0,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "clamp(center center)",
-          end: "+100px",
-          scrub: true,
         },
       });
+      // pinned
       gsap.to(containerRef.current, {
-        ease: "linear",
         scrollTrigger: {
           scrub: true,
           trigger: containerRef.current,
@@ -62,8 +52,9 @@ export function PhotoGalery() {
           pin: true,
         },
       });
+      // slider
       gsap.to("[data-item='slider']", {
-        xPercent: -125,
+        xPercent: -60,
         scrollTrigger: {
           scrub: true,
           trigger: "[data-item='slider']",
@@ -86,10 +77,12 @@ export function PhotoGalery() {
         </p>
         <Button>View More</Button>
       </div>
-      <div className={style.slider} data-item="slider">
-        {PHOTO_GALLERY_IMG.map((img, i) => {
-          return <PhotoGaleryImg key={i} {...img} data-item="img" />;
-        })}
+      <div className={style.slider_wrapper}>
+        <div className={style.slider} data-item="slider">
+          {PHOTO_GALLERY_IMG.map((img, i) => {
+            return <PhotoGaleryImg key={i} {...img} data-item="img" />;
+          })}
+        </div>
       </div>
     </section>
   );
