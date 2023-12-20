@@ -33,10 +33,11 @@ export function PhotoGalery() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from("[data-item='desc']", {
+      gsap.from("[data-animation='item']", {
         opacity: 0,
-        y: 30,
-        duration: 0.3,
+        yPercent: 100,
+        duration: 0.4,
+        stagger: 0.2,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "clamp(center center)",
@@ -69,13 +70,13 @@ export function PhotoGalery() {
 
   return (
     <section className={style.container} ref={containerRef}>
-      <div className={style.desc} data-item="desc">
+      <div className={style.desc}>
         <SectionTitle desc="Photo Gallery" title="Instagram" align="left" />
-        <p>
+        <p data-animation="item">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
           mattis ipsum turpis elit elit scelerisque egestas mu.
         </p>
-        <Button>View More</Button>
+        <Button data-animation="item">View More</Button>
       </div>
       <div className={style.slider_wrapper}>
         <div className={style.slider} data-item="slider">
