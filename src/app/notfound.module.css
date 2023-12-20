@@ -1,12 +1,22 @@
 .container {
   position: relative;
-  background-image: url("../../public/assets/png/notfound-bg.png");
-  background-position: center;
-  background-size: cover;
   height: 100vh;
   display: grid;
   place-items: center;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../public/assets/png/notfound-bg.png");
+  background-position: center;
+  background-size: cover;
   filter: brightness(0.7);
+  z-index: -1;
 }
 
 .content_wrapper {
