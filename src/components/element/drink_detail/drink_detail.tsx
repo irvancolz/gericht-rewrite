@@ -33,6 +33,7 @@ export function DrinkDetail({
         opacity: 0,
         y: 30,
         stagger: 0.1,
+        duration: 0.3,
         scrollTrigger: {
           trigger: ".drinks_detail",
           start: "top 90%",
@@ -56,7 +57,7 @@ export function DrinkDetail({
             <>
               <p className="drink_ingredients">{item}</p>
               {i != ingredients.length - 1 && (
-                <span className={style.separator}></span>
+                <span className={`${style.separator} drink_ingredients`}></span>
               )}
             </>
           );
