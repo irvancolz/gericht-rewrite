@@ -40,8 +40,12 @@
 }
 
 .img {
-  display: block;
-  position: relative;
+  aspect-ratio: 412/430;
+  width: 100%;
+  transition: scale 0.5s ease-in-out 0.1s;
+}
+
+.img_wrapper {
   aspect-ratio: 412/430;
   width: 100%;
   cursor: pointer;
@@ -49,11 +53,7 @@
   overflow: hidden;
 }
 
-.img img {
-  transition: scale 0.5s ease-in-out 0.1s;
-}
-
-.container:hover img {
+.container:hover .img {
   scale: 1.1;
 }
 

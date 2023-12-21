@@ -46,12 +46,14 @@ export function BlogCard({
 
   return (
     <article className={style.container} ref={contentRef} {...rest}>
-      <Images
-        src={img}
-        alt="blog card"
-        className={style.img}
-        data-animate="content"
-      />
+      <div className={style.img_wrapper}>
+        <Images
+          src={img}
+          alt="blog card"
+          className={style.img}
+          data-animate="content"
+        />
+      </div>
       <div className={style.content}>
         <div className={style.header} data-animate="content">
           <p>{created_at}</p>
