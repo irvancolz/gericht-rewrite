@@ -8,8 +8,7 @@ import React, {
 } from "react";
 import style from "./menu_group.module.css";
 import Link from "next/link";
-import { Signature } from "@/components";
-import Image from "next/image";
+import { Images, Signature } from "@/components";
 import { gsap } from "gsap";
 
 const MENU_LISTS = [
@@ -119,15 +118,12 @@ export function MenuGroup() {
             </li>
           );
         })}
-        <span
-          ref={imgRef}
-          className={style.images_preview}
-          data-show={previewShowed}
-        >
-          <Image
+
+        <span ref={imgRef} data-show={previewShowed}>
+          <Images
             alt="menu"
             src={activeMenu}
-            fill
+            className={style.images_preview}
             style={{
               objectFit: "cover",
             }}

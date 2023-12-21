@@ -3,6 +3,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import style from "./awwards_item.module.css";
 import Image from "next/image";
 import gsap from "gsap";
+import { Images } from "..";
 
 export type AwwardsItemProps = {
   imgUrl: string;
@@ -36,9 +37,11 @@ export function AwwardsItem({ desc, imgUrl, title }: AwwardsItemProps) {
         <h3 className={`awwards_item_content ${style.title}`}>{title}</h3>
         <p className={`awwards_item_content ${style.desc}`}>{desc}</p>
       </div>
-      <span className={`awwards_item_content ${style.image}`}>
-        <Image alt="awwards" src={imgUrl} fill />
-      </span>
+      <Images
+        alt="awwards"
+        src={imgUrl}
+        className={`awwards_item_content ${style.image}`}
+      />
     </div>
   );
 }

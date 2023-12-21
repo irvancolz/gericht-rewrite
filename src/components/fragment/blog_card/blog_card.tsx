@@ -4,6 +4,7 @@ import style from "./blog_card.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
+import { Images } from "@/components";
 
 export type BlogCardProps = {
   id: string;
@@ -45,9 +46,12 @@ export function BlogCard({
 
   return (
     <article className={style.container} ref={contentRef} {...rest}>
-      <span className={style.img} data-animate="content">
-        <Image src={img} alt="blog card" fill />
-      </span>
+      <Images
+        src={img}
+        alt="blog card"
+        className={style.img}
+        data-animate="content"
+      />
       <div className={style.content}>
         <div className={style.header} data-animate="content">
           <p>{created_at}</p>

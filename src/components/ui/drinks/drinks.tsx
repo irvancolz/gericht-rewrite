@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./drinks.module.css";
 import { SectionTitle } from "..";
-import { Button, DrinkList, DrinksProps } from "@/components";
+import { Button, DrinkList, DrinksProps, Images } from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -72,9 +72,11 @@ export function Drinks() {
 
         <div className={style.menu_wrapper}>
           <DrinkList title="Wine & Beer" drinks={BEERS} />
-          <span className={style.image}>
-            <Image alt="drinks" src={"/assets/png/drinks_bg.png"} fill />
-          </span>
+          <Images
+            alt="drinks"
+            src={"/assets/png/drinks_bg.png"}
+            className={style.image}
+          />
           <DrinkList title="Cocktails" drinks={COOKTAILS} />
         </div>
 

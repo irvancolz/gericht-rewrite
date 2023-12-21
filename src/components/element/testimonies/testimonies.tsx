@@ -1,8 +1,8 @@
 "use client";
 import React, { ComponentProps, useLayoutEffect, useRef } from "react";
-import Image from "next/image";
 import style from "./testimonies.module.css";
 import gsap from "gsap";
+import { Images } from "..";
 
 export type Testimonies = {
   imgUrl: string;
@@ -40,9 +40,13 @@ export function CustomerTestimonies({
 
   return (
     <div ref={containerRef} className={style.testimonies} {...props}>
-      <span className={`${style.image} testimonies_content`}>
-        <Image alt="customer" src={imgUrl} fill />
-      </span>
+      {/* <span className={`${style.image} testimonies_content`}> */}
+      <Images
+        alt="customer"
+        src={imgUrl}
+        className={`${style.image} testimonies_content`}
+      />
+      {/* </span> */}
       <div>
         <p className={`${style.comment} testimonies_content`}>
           <i>{testimony}</i>
