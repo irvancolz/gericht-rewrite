@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 50vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.links {
+  position: relative;
+  font-family: var(--cormorant-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.links:not(:last-of-type)::after {
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  translate: 0 -50%;
+  content: "";
+  border-bottom: 0.15rem solid var(--main-gold-bg-col);
+  border-right: 0.15rem solid var(--main-gold-bg-col);
+  aspect-ratio: 1;
+  height: 0.5rem;
+  rotate: -45deg;
+}

@@ -1,5 +1,4 @@
 "use client";
-import styles from "../page.module.css";
 import {
   About,
   ChefWord,
@@ -41,7 +40,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <>
       <HomeHero />
       <About />
       <Reservation />
@@ -53,6 +52,6 @@ export default function Home() {
       <Awards />
       <PhotoGalery />
       <Blog />
-    </main>
+    </>
   );
 }

@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  max-height: 679px;
+  height: 95vh;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 0;
+  background: url("../../../../../public/assets/png/blog_hero_img_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.4);
+  background-position: center center;
+  z-index: -1;
+}
+
+.title {
+  font-size: 5rem;
+  color: var(--main-gold-bg-col);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 6rem;
+  }
+}
