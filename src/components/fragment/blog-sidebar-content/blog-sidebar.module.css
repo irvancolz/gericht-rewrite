@@ -1,0 +1,12 @@
+.section {
+  background-color: var(--med-gray-bg-col);
+  padding: 2rem;
+}
+
+.section_title {
+  font-family: var(--cormorant-font);
+  color: var(--main-gold-bg-col);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}

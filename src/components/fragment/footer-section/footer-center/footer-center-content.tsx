@@ -2,11 +2,12 @@
 import Image from "next/image";
 import React from "react";
 import style from "./footer-center.module.css";
+import { Images, SocialMedia } from "@/components";
 
 export function FooterCenterContent() {
   return (
     <div className={style.container}>
-      <Image
+      <Images
         src={"/assets/svg/gericht-footer.svg"}
         alt="gericht"
         height={83}
@@ -19,32 +20,13 @@ export function FooterCenterContent() {
           </span>
           <span className="taglines"> service of others.&rdquo;</span>
         </p>
-        <Image
+        <Images
           src={"/assets/svg/spoon.svg"}
           alt="spoon"
           width={43}
           height={9}
         />
-        <span>
-          <Image
-            src={"/assets/svg/facebook-footer.svg"}
-            alt="fb"
-            width={24}
-            height={24}
-          />
-          <Image
-            src={"/assets/svg/twitter-footer.svg"}
-            alt="twitter"
-            width={24}
-            height={24}
-          />
-          <Image
-            src={"/assets/svg/instagram-footer.svg"}
-            alt="ig"
-            width={24}
-            height={24}
-          />
-        </span>
+        <SocialMedia />
       </div>
     </div>
   );

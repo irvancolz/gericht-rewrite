@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.blogs {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.btn {
+  display: block;
+  margin: 4rem auto 0;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
+}

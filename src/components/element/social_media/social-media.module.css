@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.img {
+  position: relative;
+  aspect-ratio: 1;
+  width: 1rem;
+}
