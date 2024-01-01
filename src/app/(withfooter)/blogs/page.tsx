@@ -1,10 +1,4 @@
-import {
-  BlogCard,
-  BlogCardProps,
-  BlogHero,
-  BlogSidebar,
-  Button,
-} from "@/components";
+import { BlogCard, BlogCardProps, BlogSidebar, Button } from "@/components";
 import React from "react";
 import style from "./blogs_page.module.css";
 
@@ -50,7 +44,6 @@ const BLOG_CONTENT: BlogCardProps[] = [
 export default function BlogsPage() {
   return (
     <>
-      <BlogHero />
       <div className={`${style.content} container`}>
         <div className="wrapper">
           <div className={style.blogs}>

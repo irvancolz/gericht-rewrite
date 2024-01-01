@@ -17,6 +17,8 @@
   width: 100%;
   color: var(--soft-gray-bg-col);
   padding-block: 0.25rem;
+  font-family: var(--opens-font);
+  text-transform: capitalize;
 }
 
 .img {

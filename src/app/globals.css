@@ -149,11 +149,13 @@ li {
   position: relative;
 }
 
-input {
+input,
+textarea {
   appearance: none;
   border-color: transparent;
   outline-color: transparent;
   background-color: transparent;
+  font-family: var(--cormorant-font);
 }
 
 @media (min-width: 768px) {

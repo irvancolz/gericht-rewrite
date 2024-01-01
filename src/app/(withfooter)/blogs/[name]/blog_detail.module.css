@@ -1,0 +1,44 @@
+.title {
+  color: var(--main-gold-bg-col);
+  font-size: 4rem;
+  font-weight: 600;
+  text-transform: capitalize;
+
+  margin-bottom: 3.125rem;
+}
+
+.blog_detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.author,
+.date {
+  font-family: 1rem;
+  font-weight: 400;
+}
+
+.body {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+}
+
+.hero_img {
+  position: relative;
+  aspect-ratio: 16/9;
+  display: block;
+
+  margin-bottom: 3.125rem;
+}
+
+@media (min-width: 768px) {
+  .hero_img {
+    aspect-ratio: 130/43;
+  }
+  .comments {
+    max-width: 967px;
+  }
+}
