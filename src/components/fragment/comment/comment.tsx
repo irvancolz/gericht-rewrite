@@ -1,7 +1,7 @@
 "use client";
 import React, { FormEvent, useRef, useState } from "react";
 import style from "./comment.module.css";
-import { Button, Images } from "@/components";
+import { Button, Images, Textarea } from "@/components";
 
 export type CommentProps = {
   id: string;
@@ -65,10 +65,9 @@ export function Comment({
               Cancel Reply
             </Button>
             <form className={style.reply} onSubmit={addReplies}>
-              <textarea
+              <Textarea
                 required
                 placeholder="Hi there! I love your blog...."
-                className={style.reply_input}
                 ref={inputReplyRef}
               />
               <Button type="submit">Submit</Button>

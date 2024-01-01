@@ -34,6 +34,10 @@
   margin-bottom: 3.125rem;
 }
 
+.input {
+  border-color: var(--accent-gold-bg-col);
+}
+
 @media (min-width: 768px) {
   .hero_img {
     aspect-ratio: 130/43;

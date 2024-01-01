@@ -11,3 +11,4 @@ export * from "./awwards_item";
 export * from "./photo_gallery_img";
 export * from "./images";
 export * from "./social_media";
+export * from "./input";

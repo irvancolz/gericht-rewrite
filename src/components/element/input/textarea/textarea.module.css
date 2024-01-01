@@ -1,0 +1,19 @@
+.textarea {
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: var(--white-bg-col);
+  height: 8em;
+  margin-block: 1rem;
+  outline-color: transparent;
+  border-color: transparent;
+  outline-width: 1px;
+  border-width: 1px;
+  font-weight: 700;
+}
+
+.textarea:focus {
+  outline-color: var(--accent-gold-bg-col);
+  border-color: var(--accent-gold-bg-col);
+}

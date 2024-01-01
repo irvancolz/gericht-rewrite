@@ -1,6 +1,15 @@
-import React from "react";
+"use client";
+import React, { FormEvent } from "react";
 import style from "./blog_detail.module.css";
-import { BlogSidebar, Comment, CommentProps, Images } from "@/components";
+import {
+  BlogSidebar,
+  Button,
+  Comment,
+  CommentProps,
+  Images,
+  Input,
+  Textarea,
+} from "@/components";
 
 const DUMMY_COMMENTS: CommentProps[] = [
   {
@@ -22,6 +31,10 @@ const DUMMY_COMMENTS: CommentProps[] = [
 ];
 
 export default function BlogDetail() {
+  const postComment = (e: FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="container">
       <div className={style.header}>
@@ -49,6 +62,36 @@ export default function BlogDetail() {
             return <Comment key={i} {...comment} />;
           })}
         </div>
+
+        <h3>Post A Comment</h3>
+        <form onSubmit={postComment}>
+          <Textarea
+            className={style.input}
+            placeholder="Hello There, My message..."
+          />
+          <div className="comment_profile">
+            <Input
+              className={style.input}
+              type="text"
+              placeholder="First Name"
+              required
+            />
+            <Input
+              className={style.input}
+              type="text"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <div className="save_info">
+            <input type="checkbox" id="save_info" />
+            <label htmlFor="save_info">
+              Save my name and email in this browser for the next time I
+              comment.
+            </label>
+          </div>
+          <Button>Submit</Button>
+        </form>
       </div>
     </div>
   );

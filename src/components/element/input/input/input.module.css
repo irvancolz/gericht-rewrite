@@ -1,0 +1,20 @@
+.input {
+  font-family: var(--cormorant-font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white-bg-col);
+  border-width: 1px;
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+}
+
+.input:focus {
+  outline-color: var(--accent-gold-bg-col);
+  border-color: var(--accent-gold-bg-col);
+}
+
+@media (min-width: 768px) {
+  .input {
+    padding: 1rem 1.2rem;
+  }
+}
