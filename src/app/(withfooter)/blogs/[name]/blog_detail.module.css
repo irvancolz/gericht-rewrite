@@ -24,6 +24,7 @@
   display: flex;
   gap: 4rem;
   justify-content: space-between;
+  flex-direction: column;
 }
 
 .hero_img {
@@ -37,5 +38,8 @@
 @media (min-width: 768px) {
   .hero_img {
     aspect-ratio: 130/43;
+  }
+  .body {
+    flex-direction: row;
   }
 }

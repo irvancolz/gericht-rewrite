@@ -3,6 +3,7 @@ import style from "./blog_detail.module.css";
 import {
   BlogComment,
   BlogSidebar,
+  Button,
   Comment,
   CommentInput,
   Images,
@@ -26,7 +27,71 @@ export default function BlogDetail() {
         />
       </div>
       <div className={style.body}>
-        <p></p>
+        <div className="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
+            pharetra ut lobortis id. Commodo sit libero lacus a egestas
+            penatibus pretium quis lorem. Purus morbi sagittis, faucibus odio.
+            Elementum felis nibh at purus consectetur phasellus lacus,
+            pellentesque dictumst. Pellentesque eu malesuada id vitae risus,
+            libero. Ullamcorper turpis blandit faucibus turpis. Eu elit faucibus
+            leo eget.
+          </p>
+          <h3>How to prepare your grill</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
+            pharetra ut lobortis id. Commodo sit libero lacus a egestas
+            penatibus pretium quis lorem. Purus morbi sagittis, faucibus odio.
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li> Tincidunt pharetra ut lobortis id.</li>
+            <li>
+              Commodo sit libero lacus a egestas penatibus pretium quis lorem.
+            </li>
+          </ul>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
+            pharetra ut lobortis id. Commodo sit libero lacus a egestas
+            penatibus pretium quis lorem. Purus morbi sagittis, faucibus odio.
+            Elementum felis nibh at purus consectetur phasellus lacus,
+            pellentesque dictumst. Pellentesque eu malesuada id vitae risus,
+            libero. Ullamcorper turpis blandit faucibus turpis. Eu elit faucibus
+            leo eget.
+          </p>
+          <p>There is no love sincerer than the love of food.</p>
+          <h3>How to care for your grill</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tin cidunt
+            pharetra ut lobortis id. Commodo sit libero lacus a egestas
+            penatibus pretium quis lorem.
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li> Tincidunt pharetra ut lobortis id.</li>
+            <li>
+              Commodo sit libero lacus a egestas penatibus pretium quis lorem.
+            </li>
+          </ul>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
+            pharetra ut lobortis id. Commodo sit libero lacus a egestas
+            penatibus pretium quis lorem. Purus morbi sagittis, faucibus odio.
+          </p>
+          <div className="footer">
+            <nav aria-label="blog tags navigation">
+              <ul>
+                <li>#Grilling</li>
+                <li>#Outdoor</li>
+                <li>#Cooking</li>
+              </ul>
+            </nav>
+            <div>
+              <Button variant="secondary">Comment</Button>
+              <Button variant="secondary">Like</Button>
+            </div>
+          </div>
+        </div>
         <BlogSidebar />
       </div>
       <BlogComment />
