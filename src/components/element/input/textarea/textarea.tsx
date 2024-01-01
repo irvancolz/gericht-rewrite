@@ -4,7 +4,7 @@ import style from "./textarea.module.css";
 export const Textarea = forwardRef<
   HTMLTextAreaElement,
   ComponentProps<"textarea">
->(({ className, ...rest }, ref) => {
+>(({ className = "", ...rest }, ref) => {
   const currentRef = ref ? ref : createRef<HTMLTextAreaElement>();
 
   return (

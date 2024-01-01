@@ -4,6 +4,7 @@ import style from "./blog_detail.module.css";
 import {
   BlogSidebar,
   Button,
+  Checkbox,
   Comment,
   CommentProps,
   Images,
@@ -83,13 +84,7 @@ export default function BlogDetail() {
               required
             />
           </div>
-          <div className="save_info">
-            <input type="checkbox" id="save_info" />
-            <label htmlFor="save_info">
-              Save my name and email in this browser for the next time I
-              comment.
-            </label>
-          </div>
+          <Checkbox label="Save my name and email in this browser for the next time I comment." />
           <Button>Submit</Button>
         </form>
       </div>
