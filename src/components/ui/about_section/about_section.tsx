@@ -30,6 +30,9 @@ export function AboutSubSection({
           trigger: containerRef.current,
           start: "center 80%",
         },
+        onComplete: function () {
+          gsap.set(this.targets(), { clearProps: "all" });
+        },
       });
     }, containerRef);
 

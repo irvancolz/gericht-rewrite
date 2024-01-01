@@ -42,6 +42,9 @@ export function PhotoGalery() {
           trigger: containerRef.current,
           start: "clamp(center center)",
         },
+        onComplete: function () {
+          gsap.set(this.targets(), { clearProps: "all" });
+        },
       });
       // pinned
       gsap.to(containerRef.current, {

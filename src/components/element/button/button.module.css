@@ -1,7 +1,6 @@
 .btn {
   padding: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s ease-out;
 }
 
 .primary {
@@ -12,19 +11,32 @@
   outline-color: transparent;
   border-color: transparent;
   font-weight: 700;
+  transition: background-color 0.2s ease-out, scale 120ms ease-in-out;
+  scale: 1;
 }
 
-.primary:hover {
-  background-color: #e8c238;
+.primary:active {
+  scale: 0.95;
 }
 
 .secondary {
-  color: var(--white-b-col);
+  color: var(--soft-gray-bg-col);
   font-family: var(--poppins-font);
   outline-color: transparent;
   border-color: transparent;
   background-color: transparent;
   font-weight: 500;
+  transition: color 120ms ease-in-out;
+}
+
+@media (hover: hover) {
+  .secondary:hover {
+    color: var(--white-bg-col);
+  }
+
+  .primary:hover {
+    background-color: #e8c238;
+  }
 }
 
 @media (min-width: 768px) {

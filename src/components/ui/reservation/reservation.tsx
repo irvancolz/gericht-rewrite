@@ -30,6 +30,9 @@ export function Reservation() {
           trigger: ".reservation_input",
           start: "top 80%",
         },
+        onComplete: function () {
+          gsap.set(this.targets(), { clearProps: "all" });
+        },
       });
     }, containerRef);
 

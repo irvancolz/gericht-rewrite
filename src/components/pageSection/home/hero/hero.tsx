@@ -40,6 +40,9 @@ export function HomeHero() {
           {
             opacity: 0,
             y: 10,
+            onComplete: function () {
+              gsap.set(this.targets(), { clearProps: "all" });
+            },
           },
           "-=0.3"
         );
@@ -78,9 +81,7 @@ export function HomeHero() {
             volutpat morbi facilisis quam scelerisque sapien. Et, penatibus
             aliquam amet tellus
           </p>
-          <Button variant="primary" className="home_hero_btn">
-            Explore Menu
-          </Button>
+          <Button className="home_hero_btn">Explore Menu</Button>
         </div>
         <HomeHeroCarousel
           activeTabs={activeSlide}
