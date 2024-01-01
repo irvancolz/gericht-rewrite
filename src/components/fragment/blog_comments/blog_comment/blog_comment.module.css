@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--main-gold-bg-col);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 967px;
+    margin-top: 8rem;
+  }
+}

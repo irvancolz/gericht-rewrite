@@ -1,0 +1,36 @@
+.container {
+  max-width: 635px;
+  width: 100%;
+}
+
+.title {
+  color: var(--main-gold-bg-col);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.input {
+  border-color: var(--accent-gold-bg-col);
+}
+
+.input:not(:first-child) {
+  flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+  .title {
+    margin-bottom: 2.5rem;
+  }
+  .input:not(:first-child) {
+    flex-basis: 47%;
+  }
+  .form {
+    gap: 2rem;
+  }
+}

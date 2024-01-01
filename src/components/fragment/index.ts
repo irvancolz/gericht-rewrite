@@ -6,3 +6,4 @@ export * from "./blog_card";
 export * from "./breadcrumbs";
 export * from "./blog-sidebar-content";
 export * from "./comment";
+export * from "./blog_comments";

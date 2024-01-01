@@ -67,6 +67,7 @@ export function Comment({
             <form className={style.reply} onSubmit={addReplies}>
               <Textarea
                 required
+                className={style.textarea}
                 placeholder="Hi there! I love your blog...."
                 ref={inputReplyRef}
               />
