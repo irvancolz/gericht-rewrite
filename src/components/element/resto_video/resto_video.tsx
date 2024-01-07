@@ -1,8 +1,15 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { HTMLAttributes, useRef, useState } from "react";
 import style from "./resto_video.module.css";
 
-export function RestoVideo() {
+export type VideoSource = { src: string; type: string };
+
+export interface VideoProps
+  extends Omit<HTMLAttributes<HTMLVideoElement>, "content"> {
+  content: VideoSource[];
+}
+
+export function Video({ content }: VideoProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isVideoPlayed, setVideoPlayed] = useState<boolean>(false);
 
@@ -32,8 +39,9 @@ export function RestoVideo() {
         onClick={toggleVidePlay}
         onEnded={() => setVideoPlayed(false)}
       >
-        <source src="/assets/video/resto_view.mp4" type="video/mp4" />
-        <source src="/assets/video/resto_view.webm" type="video/webm" />
+        {content.map((vid, i) => {
+          return <source key={i} src={vid.src} type={vid.type} />;
+        })}
         your browser did not support for webm / mp4 video
       </video>
       <button

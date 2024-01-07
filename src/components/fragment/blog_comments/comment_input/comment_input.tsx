@@ -9,7 +9,7 @@ export function CommentInput() {
   };
 
   return (
-    <div className={style.container}>
+    <div className={style.container} id="comment_input">
       <h3 className={style.title}>Post A Comment</h3>
       <form onSubmit={postComment} className={style.form}>
         <Textarea

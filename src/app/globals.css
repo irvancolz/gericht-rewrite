@@ -50,6 +50,7 @@
   --trans-gold-bg-col: rgba(245, 239, 219, 20%);
   --soft-gray-bg-col: #aaa;
   --med-gray-bg-col: #242424;
+  --dark-gray-bg-col: #545454;
   --white-bg-col: #fff;
   --dark-overlay-bg: linear-gradient(
     208deg,

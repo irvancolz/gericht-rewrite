@@ -3,6 +3,11 @@
   cursor: pointer;
 }
 
+.with_icon {
+  display: inline-flex;
+  gap: 1rem;
+}
+
 .primary {
   --bg-col: var(--main-gold-bg-col);
   color: var(--main-dark-bg-col);

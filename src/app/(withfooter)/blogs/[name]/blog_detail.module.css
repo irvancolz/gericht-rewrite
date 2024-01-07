@@ -35,11 +35,43 @@
   margin-bottom: 3.125rem;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer > *:first-child {
+  flex-basis: 50%;
+}
+
+.tag_wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  position: relative;
+  aspect-ratio: 1;
+  width: 1rem;
+}
+
 @media (min-width: 768px) {
   .hero_img {
     aspect-ratio: 130/43;
   }
   .body {
+    flex-direction: row;
+  }
+  .footer {
+    justify-content: space-between;
     flex-direction: row;
   }
 }

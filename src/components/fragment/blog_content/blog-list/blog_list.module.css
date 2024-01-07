@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.list {
+  position: relative;
+  color: var(--soft-gray-bg-col);
+  font-size: 1rem;
+  padding-left: 1.5rem;
+}
+
+.list::before {
+  content: "";
+  background-color: var(--main-gold-bg-col);
+  height: 1px;
+  width: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0% -50%;
+}
