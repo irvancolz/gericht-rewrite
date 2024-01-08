@@ -148,7 +148,7 @@ export default function BlogDetail() {
                 variant="secondary"
                 leftIcon={<Icon src={"/assets/svg/chat_bubble.svg"} />}
               >
-                Comment
+                <a href="#comment_input">Comment</a>
               </Button>
               <Button
                 variant="secondary"
