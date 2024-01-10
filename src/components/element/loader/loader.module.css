@@ -1,0 +1,33 @@
+.container {
+  margin: 0.5rem;
+}
+
+.loader {
+  position: relative;
+  background-color: var(--main-col);
+  height: var(--height, 1.5rem);
+  width: var(--width, 100%);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  height: 100%;
+  width: 10%;
+  left: 0;
+  animation: shine 1s infinite;
+}
+
+@keyframes shine {
+  to {
+    left: 100%;
+  }
+}

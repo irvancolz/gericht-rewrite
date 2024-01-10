@@ -10,10 +10,10 @@ import {
 import Link from "next/link";
 
 const DUMMY_POST: BlogCardProps = {
-  id: "2",
+  id: 2,
   img: "/assets/png/blog_post_img_2.png",
   author: "John Micheal",
-  content:
+  spoiler:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
   created_at: "23 May 2021",
   title: "summer cocktails and mocktails",
@@ -49,7 +49,6 @@ export function BlogSidebar() {
             placeholder="type something"
             className={style.search_input}
           />
-
           <Images
             src={"/assets/svg/search.svg"}
             alt="search"
