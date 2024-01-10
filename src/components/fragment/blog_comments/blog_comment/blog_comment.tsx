@@ -1,32 +1,32 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import style from "./blog_comment.module.css";
-import { CommentProps, Comment } from "../..";
-
-const DUMMY_COMMENTS: CommentProps[] = [
-  {
-    id: "1",
-    author: "Nora Martin",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut eu morbi tincidunt erat egestas quisque ultrices ut. Vel elementum blandit et tellus sit tincidunt nulla non tincidunt.",
-    date: "01 Dec 2020",
-    replies: [
-      {
-        id: "1",
-        author: "Nora Martin",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut eu morbi tincidunt erat egestas quisque ultrices ut. Vel elementum blandit et tellus sit tincidunt nulla non tincidunt.",
-        date: "01 Dec 2020",
-      },
-    ],
-  },
-];
+import { Comment } from "../..";
+import { type Comment as Comments } from "@/utilities/blog_type";
+import { useParams } from "next/navigation";
+import { getComment, getCommentCount } from "@/utilities/supabase";
 
 export function BlogComment() {
+  const { id } = useParams();
+  const [comments, setComments] = useState<Comments[]>([]);
+  const [commentTotal, setComentTotal] = useState<number>(0);
+  useEffect(() => {
+    async function getInitialComment() {
+      const [comment, total] = await Promise.all([
+        getComment(parseInt(id as string)),
+        getCommentCount(parseInt(id as string)),
+      ]);
+      setComments(() => comment);
+      setComentTotal(() => total?.count);
+    }
+
+    getInitialComment();
+  }, [id]);
   return (
     <div className={style.container}>
-      <h3 className={style.title}>Comments(3)</h3>
+      <h3 className={style.title}>Comments({commentTotal})</h3>
       <div>
-        {DUMMY_COMMENTS.map((comment, i) => {
+        {comments.map((comment, i) => {
           return <Comment key={i} {...comment} />;
         })}
       </div>

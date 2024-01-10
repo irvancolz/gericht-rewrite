@@ -14,6 +14,16 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "randomuser.me",
+        port: "",
+        pathname: "/api/portraits/men/**",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

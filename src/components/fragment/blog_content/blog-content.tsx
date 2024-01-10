@@ -1,14 +1,8 @@
-import { Video, VideoSource } from "@/components";
+import { VideoSource } from "@/components";
 import { BlogList, BlogQuote, BlogSectionTitle, BlogText, BlogVideo } from ".";
+import { BlogContent } from "@/utilities/blog_type";
 
-export type BlogContentType = "list" | "text" | "title" | "qoute" | "video";
-
-export type BlogContentProps = {
-  type: BlogContentType;
-  content: string | string[] | VideoSource[];
-};
-
-export function BlogContent({ content, type }: BlogContentProps) {
+export function BlogContent({ content, type }: BlogContent) {
   switch (type) {
     case "list":
       return <BlogList content={content as string[]} />;

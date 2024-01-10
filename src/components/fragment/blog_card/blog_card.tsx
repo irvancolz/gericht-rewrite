@@ -2,24 +2,18 @@
 import React, { ComponentProps, useLayoutEffect, useRef } from "react";
 import style from "./blog_card.module.css";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { Images } from "@/components";
+import { Blog } from "@/utilities/blog_type";
+import { formatDate } from "@/utilities/date";
 
-export type BlogCardProps = {
-  id: string;
-  author: string;
-  created_at: string;
-  title: string;
-  content: string;
-  img: string;
-} & ComponentProps<"article">;
+export type BlogCardProps = Blog & Omit<ComponentProps<"article">, "id">;
 
 export function BlogCard({
   id,
   author,
   created_at,
-  content,
+  spoiler,
   title,
   img,
   ...rest
@@ -56,8 +50,8 @@ export function BlogCard({
       </div>
       <div className={style.content}>
         <div className={style.header} data-animate="content">
-          <p>{created_at}</p>
-          <p>-{author}</p>
+          <p>{formatDate(created_at)}</p>
+          <p>- {author}</p>
         </div>
         <Link
           href={`/blog/${id}`}
@@ -67,7 +61,7 @@ export function BlogCard({
           {title}
         </Link>
         <p className={style.desc} data-animate="content">
-          {content}
+          {spoiler}
         </p>
         <Link
           href={`/blog/${id}`}

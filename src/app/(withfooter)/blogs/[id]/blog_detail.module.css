@@ -44,6 +44,7 @@
 .footer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -63,6 +64,20 @@
   width: 1rem;
 }
 
+.date,
+.author {
+  text-transform: capitalize;
+}
+
+.action_btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag {
+  text-transform: capitalize;
+}
+
 @media (min-width: 768px) {
   .hero_img {
     aspect-ratio: 130/43;
@@ -72,6 +87,9 @@
   }
   .footer {
     justify-content: space-between;
+    flex-direction: row;
+  }
+  .action_btn {
     flex-direction: row;
   }
 }

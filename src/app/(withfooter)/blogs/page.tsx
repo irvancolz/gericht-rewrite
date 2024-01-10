@@ -1,54 +1,29 @@
-import { BlogCard, BlogCardProps, BlogSidebar, Button } from "@/components";
-import React from "react";
+"use client";
+import { BlogCard, BlogSidebar, Button } from "@/components";
+import React, { useEffect, useState } from "react";
 import style from "./blogs_page.module.css";
-
-const BLOG_CONTENT: BlogCardProps[] = [
-  {
-    id: "1",
-    img: "/assets/png/blog_post_img_1.png",
-    author: "Annalisa L",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
-    created_at: "16 Apr 2021",
-    title: "tips for prepping and caring for your grill",
-  },
-  {
-    id: "2",
-    img: "/assets/png/blog_post_img_2.png",
-    author: "John Micheal",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
-    created_at: "23 May 2021",
-    title: "summer cocktails and mocktails",
-  },
-  {
-    id: "3",
-    img: "/assets/png/blog_post_img_3.png",
-    author: "Fred W",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
-    created_at: "06 Aug 2021",
-    title: "easy cooking for college students",
-  },
-  {
-    id: "4",
-    img: "/assets/png/blog_post_img_4.png",
-    author: "Kaityln B",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
-    created_at: "17 June 2018",
-    title: "Co-ordination & Teamwork Tips from a sous chef",
-  },
-];
+import { Blog } from "@/utilities/blog_type";
+import { getBlogRecord } from "@/utilities/supabase";
 
 export default function BlogsPage() {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  useEffect(() => {
+    async function getBlog() {
+      const resp = await getBlogRecord();
+      if (resp) {
+        setBlogs(() => [...resp]);
+        console.log(resp);
+      }
+    }
+    getBlog();
+  }, []);
   return (
     <>
       <div className={`${style.content} container`}>
         <div className="wrapper">
           <div className={style.blogs}>
-            {BLOG_CONTENT.map((blog) => {
-              return <BlogCard key={blog.id} {...blog} />;
+            {blogs.map((blog, i) => {
+              return <BlogCard key={i} {...blog} />;
             })}
           </div>
           <Button className={style.btn}>View More</Button>
