@@ -3,11 +3,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 import { Topnav } from "../components";
 import { useEffect, useState } from "react";
-import {
-  getBlogRecord,
-  getComment,
-  getCommentReplies,
-} from "@/utilities/supabase/supabase";
 
 export default function RootLayout({
   children,

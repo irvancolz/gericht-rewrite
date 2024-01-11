@@ -70,7 +70,7 @@ export function BlogSidebar() {
         </div>
       </BlogSidebarContent>
       <BlogSidebarContent title="Our Latest Posts">
-        <BlogCard {...DUMMY_POST} />
+        <BlogCard {...DUMMY_POST} loaderVariant="gray" />
       </BlogSidebarContent>
       <BlogSidebarContent title="Related Tags">
         {RELATED_TAGS.map((row, i) => {
