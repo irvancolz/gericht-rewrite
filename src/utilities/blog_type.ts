@@ -16,7 +16,7 @@ export type BlogContent = {
   content: string | string[] | VideoSource[];
 };
 
-export type BlogDetail = Blog & { content: BlogContent[] };
+export type BlogDetail = Blog & { content: BlogContent[]; category_id: number };
 
 export type Comment = {
   id: number;

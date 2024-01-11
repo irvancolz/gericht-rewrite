@@ -76,6 +76,7 @@
 
 .tag {
   position: relative;
+  text-transform: capitalize;
 }
 
 .tag:not(:last-of-type)::after {

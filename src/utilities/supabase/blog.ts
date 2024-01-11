@@ -1,5 +1,5 @@
 import { supabase } from "./supabase";
-import {Blog, BlogDetail} from "../blog_type"
+import { Blog, BlogDetail } from "../blog_type";
 
 export async function getBlogRecord() {
   let { data, error } = await supabase.from("blog").select("*");
@@ -13,6 +13,21 @@ export async function getBlog(id: number) {
     .from("blog")
     .select("*")
     .eq("id", id)
+    .single();
+
+  if (error) console.log(error.message);
+
+  return data as BlogDetail;
+}
+
+export async function getLatestBlog() {
+  let { data, error } = await supabase
+    .from("blog")
+    .select("*")
+    .order("created_at", {
+      nullsFirst: false,
+      ascending: false,
+    })
     .single();
 
   if (error) console.log(error.message);

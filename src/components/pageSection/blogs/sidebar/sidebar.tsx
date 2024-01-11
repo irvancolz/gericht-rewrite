@@ -1,45 +1,48 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import style from "./sidebar.module.css";
 import {
   BlogCard,
   BlogCardProps,
   BlogSidebarContent,
   Images,
+  Loader,
   SocialMedia,
 } from "@/components";
 import Link from "next/link";
-
-const DUMMY_POST: BlogCardProps = {
-  id: 2,
-  img: "/assets/png/blog_post_img_2.png",
-  author: "John Micheal",
-  spoiler:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
-  created_at: "23 May 2021",
-  title: "summer cocktails and mocktails",
-};
-
-const RELATED_TAGS: string[][] = [
-  ["Grilling", "Cooking", "Baking"],
-  ["Cuisines", "Chef", "Alcohol Mixing"],
-];
-
-const CATEGORIES: { name: string; count: number }[] = [
-  {
-    name: "Photography",
-    count: 1,
-  },
-  {
-    name: "Baking",
-    count: 2,
-  },
-  {
-    name: "Cooking Tips",
-    count: 6,
-  },
-];
+import { Blog, Tag } from "@/utilities/blog_type";
+import {
+  Categories,
+  getAllCategories,
+  getLatestBlog,
+  getTags,
+} from "@/utilities/supabase";
+import { splitArray } from "@/utilities/array";
 
 export function BlogSidebar() {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [tags, setTags] = useState<Tag[][]>([]);
+  const [categories, setCategories] = useState<Categories[]>([]);
+  const [latestPost, setLatestpost] = useState<Blog>({} as Blog);
+
+  useEffect(() => {
+    async function getInitialData() {
+      const [tag, category, post] = await Promise.all([
+        getTags(),
+        getAllCategories(),
+        getLatestBlog(),
+      ]);
+
+      const splittedTags = splitArray(tag, 3);
+      setTags(() => splittedTags);
+      setCategories(() => category);
+      setLatestpost(() => post);
+      setLoading(() => false);
+    }
+
+    getInitialData();
+  }, []);
+
   return (
     <div className={style.container}>
       <BlogSidebarContent title="Search page">
@@ -58,34 +61,58 @@ export function BlogSidebar() {
       </BlogSidebarContent>
       <BlogSidebarContent title="All categories">
         <div className={style.category_wrapper}>
-          {CATEGORIES.map((category, i) => {
-            return (
-              <Link href={""} key={i} className={style.categories}>
-                <span className={style.category_name}>{category.name}</span>
-                <span className={style.divider}></span>
-                <span>({category.count})</span>
-              </Link>
-            );
-          })}
+          {loading ? (
+            <>
+              <Loader width={300} height={30} color="gray" />
+              <Loader width={300} height={30} color="gray" />
+              <Loader width={300} height={30} color="gray" />
+            </>
+          ) : (
+            categories.map((category, i) => {
+              return (
+                <Link
+                  href={`category/${category.name}`}
+                  key={i}
+                  className={style.categories}
+                >
+                  <span className={style.category_name}>{category.name}</span>
+                  <span className={style.divider}></span>
+                  <span>({category.blog[0].count})</span>
+                </Link>
+              );
+            })
+          )}
         </div>
       </BlogSidebarContent>
       <BlogSidebarContent title="Our Latest Posts">
-        <BlogCard {...DUMMY_POST} loaderVariant="gray" />
+        <BlogCard {...latestPost} loaderVariant="gray" />
       </BlogSidebarContent>
       <BlogSidebarContent title="Related Tags">
-        {RELATED_TAGS.map((row, i) => {
-          return (
-            <p key={i} className={style.row_tag}>
-              {row.map((tag, j) => {
-                return (
-                  <Link href={""} key={j} className={style.tag}>
-                    {tag}
-                  </Link>
-                );
-              })}
-            </p>
-          );
-        })}
+        {loading ? (
+          <>
+            <Loader width={300} height={30} color="gray" />
+            <Loader width={300} height={30} color="gray" />
+            <Loader width={300} height={30} color="gray" />
+          </>
+        ) : (
+          tags.map((row, i) => {
+            return (
+              <p key={i} className={style.row_tag}>
+                {row.map((tag, j) => {
+                  return (
+                    <Link
+                      href={`tag/${tag.name}`}
+                      key={j}
+                      className={style.tag}
+                    >
+                      {tag.name}
+                    </Link>
+                  );
+                })}
+              </p>
+            );
+          })
+        )}
       </BlogSidebarContent>
       <BlogSidebarContent title="Share">
         <SocialMedia />
