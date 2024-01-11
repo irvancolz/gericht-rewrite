@@ -14,13 +14,14 @@ import { Tag, type BlogDetail } from "@/utilities/blog_type";
 import { getBlog, getBlogTag } from "@/utilities/supabase";
 import { useParams, usePathname } from "next/navigation";
 import { formatDate } from "@/utilities/date";
+import { getSupabasePublicUrl } from "@/utilities/supabase";
 
 const Icon = ({ src }: { src: string }) => {
   return <Images className={style.icon} src={src} alt="icon" />;
 };
 
 export default function BlogDetail() {
-  const [data, setData] = useState<BlogDetail>({} as BlogDetail);
+  const [data, setData] = useState<BlogDetail | null>(null);
   const [tags, setTags] = useState<Tag[]>([]);
 
   const { id } = useParams();
@@ -36,6 +37,8 @@ export default function BlogDetail() {
     getData();
   }, [id]);
 
+  if (!data) return;
+
   return (
     <div className="container">
       <div className={style.header}>
@@ -44,7 +47,12 @@ export default function BlogDetail() {
           <p className={style.author}>- {data.author}</p>
         </div>
         <h1 className={style.title}>{data.title}</h1>
-        <Images className={style.hero_img} alt="blog_img" src={data.img} />
+        <Images
+          className={style.hero_img}
+          alt="blog_img"
+          src={getSupabasePublicUrl(data.img)}
+          style={{ objectFit: "cover" }}
+        />
       </div>
       <div className={style.body}>
         <div className={style.content}>

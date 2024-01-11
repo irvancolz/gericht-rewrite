@@ -12,11 +12,12 @@ import classNames from "classnames";
 export type ButtonProps = {
   variant?: "primary" | "secondary";
   leftIcon?: ReactNode;
+  p?: number;
 } & PropsWithChildren &
   ComponentProps<"button">;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", leftIcon, children, ...rest }, ref) => {
+  ({ className, variant = "primary", leftIcon, children, p, ...rest }, ref) => {
     const buttonVarClass =
       variant == "primary" ? style.primary : style.secondary;
 
@@ -25,17 +26,21 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const haveIconClass = leftIcon ? style.with_icon : "";
 
-    const btnClass = classNames(
-      className,
-      buttonVarClass,
-      style.btn,
-      haveIconClass
-    );
+    const btnClass = classNames(className, buttonVarClass, style.btn);
 
     return (
-      <button className={btnClass} ref={btnRef} {...rest}>
-        {leftIcon && leftIcon}
-        {children}
+      <button
+        className={btnClass}
+        ref={btnRef}
+        style={{
+          padding: `${p != null ? p + "px" : ".5rem"}`,
+        }}
+        {...rest}
+      >
+        <span className={haveIconClass}>
+          {leftIcon && leftIcon}
+          {children}
+        </span>
       </button>
     );
   }

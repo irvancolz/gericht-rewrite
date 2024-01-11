@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { Images, Loader } from "@/components";
 import { Blog } from "@/utilities/blog_type";
 import { formatDate } from "@/utilities/date";
+import { getSupabasePublicUrl } from "@/utilities/supabase";
 
 export type BlogCardProps = Blog &
   Omit<ComponentProps<"article">, "id"> & {
@@ -56,10 +57,11 @@ export function BlogCard({
         <>
           <div className={style.img_wrapper}>
             <Images
-              src={img}
+              src={getSupabasePublicUrl(img)}
               alt="blog card"
               className={style.img}
               data-animate="content"
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className={style.content}>

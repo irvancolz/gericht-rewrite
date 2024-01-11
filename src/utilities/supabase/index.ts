@@ -3,3 +3,4 @@ export * from "./categories";
 export * from "./comment";
 export * from "./tag";
 export * from "./user";
+export * from "./storage";

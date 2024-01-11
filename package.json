@@ -19,6 +19,7 @@
     "react-datepicker": "^4.24.0",
     "react-dom": "^18",
     "react-popper": "^2.3.0",
+    "sharp": "^0.33.1",
     "split-type": "^0.3.4",
     "splitting": "^1.0.6"
   },

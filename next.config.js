@@ -22,6 +22,12 @@ const nextConfig = {
         port: "",
         pathname: "/api/portraits/men/**",
       },
+      {
+        protocol: "https",
+        hostname: "wiilydclowagpctqbiqe.supabase.co",
+        port: "",
+        pathname: "/storage/v1/object/public/gericht-assets/**",
+      },
     ],
   },
 };

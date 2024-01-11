@@ -62,13 +62,20 @@ export function Comment({ author: authorId, comment, date, id }: Comment) {
         {/* add reply */}
         {openInput && (
           <>
-            <Button type="button" variant="secondary">
+            <Button
+              type="button"
+              variant="secondary"
+              p={0}
+              className={style.btn}
+            >
               Reply To {authorFullName}
             </Button>
             <Button
               type="button"
               variant="secondary"
               onClick={() => setOpenInput(false)}
+              p={0}
+              className={style.btn}
             >
               Cancel Reply
             </Button>
