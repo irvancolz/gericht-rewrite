@@ -9,13 +9,18 @@
   gap: 1.5rem;
   padding: 1rem 1.25rem;
   align-items: flex-start;
-  /* flex-wrap: wrap; */
 }
 
 .content {
   display: inline;
   position: relative;
   color: var(--soft-gray-bg-col);
+  width: 100%;
+}
+
+/* comment replies */
+.content > *:last-child:not(p) {
+  margin-top: 2rem;
 }
 
 .date {
@@ -61,7 +66,7 @@
   margin-block: 1rem;
 }
 
-@container (max-width: 450px) {
+@container (max-width: 200px) {
   .container {
     flex-direction: column;
   }
@@ -73,5 +78,6 @@
   }
   .container {
     flex-wrap: nowrap;
+    width: 100%;
   }
 }

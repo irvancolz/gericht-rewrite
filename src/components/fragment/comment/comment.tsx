@@ -41,7 +41,7 @@ export function Comment({ author: authorId, comment, date, id }: Comment) {
     }
 
     getCommentData();
-  }, []);
+  }, [authorId, id]);
 
   return (
     <div className={style.container}>

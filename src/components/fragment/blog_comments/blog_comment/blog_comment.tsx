@@ -10,7 +10,6 @@ export function BlogComment() {
   const { id } = useParams();
   const [comments, setComments] = useState<Comments[]>([]);
   const [commentTotal, setComentTotal] = useState<number>(0);
-  const [loading, setLOading] = useState<boolean>(true);
 
   useEffect(() => {
     async function getInitialComment() {
