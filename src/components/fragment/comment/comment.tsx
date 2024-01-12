@@ -90,42 +90,47 @@ export function Comment({
         <p className={style.comment}>{comment}</p>
 
         {/* add reply */}
-        {openInput && (
-          <>
-            <Button
-              type="button"
-              variant="secondary"
-              p={0}
-              className={style.btn}
-            >
-              Reply To {authorFullName}
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() => setOpenInput(false)}
-              p={0}
-              className={style.btn}
-            >
-              Cancel Reply
-            </Button>
-            {!validuser && (
-              <p className={style.err_msg}>
-                Please fill your identify / have your data saved
-              </p>
-            )}
-            <form className={style.reply} onSubmit={addReplies}>
-              <Textarea
-                required
-                className={style.textarea}
-                placeholder="Hi there! I love your blog...."
-                ref={inputReplyRef}
-              />
-              <Button type="submit">Submit</Button>
-            </form>
-          </>
-        )}
-
+        <div
+          className={style.reply_input_container}
+          data-expand={openInput}
+          aria-expanded={openInput}
+        >
+          {openInput && (
+            <>
+              <Button
+                type="button"
+                variant="secondary"
+                p={0}
+                className={style.btn}
+              >
+                Reply To {authorFullName}
+              </Button>
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => setOpenInput(false)}
+                p={0}
+                className={style.btn}
+              >
+                Cancel Reply
+              </Button>
+              {!validuser && (
+                <p className={style.err_msg}>
+                  Please fill your identify / have your data saved
+                </p>
+              )}
+              <form className={style.reply} onSubmit={addReplies}>
+                <Textarea
+                  required
+                  className={style.textarea}
+                  placeholder="Hi there! I love your blog...."
+                  ref={inputReplyRef}
+                />
+                <Button type="submit">Submit</Button>
+              </form>
+            </>
+          )}
+        </div>
         {/* replies */}
         {replies.length > 0 && (
           <div className={style.replies_container}>

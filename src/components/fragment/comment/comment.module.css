@@ -85,6 +85,16 @@
   margin-block: 0.5rem;
 }
 
+.reply_input_container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.reply_input_container[data-expand="true"] {
+  height: 14rem;
+}
+
 @container (max-width: 200px) {
   .container {
     flex-direction: column;
