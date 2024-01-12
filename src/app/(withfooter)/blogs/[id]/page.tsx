@@ -29,6 +29,27 @@ const Icon = ({ src }: { src: string }) => {
   return <Images className={style.icon} src={src} alt="icon" />;
 };
 
+function scrollToCommentInput() {
+  const commentInput = document.getElementById("comment_input");
+  const inputRect = commentInput?.getBoundingClientRect();
+
+  if (!inputRect) return;
+  scrollTo({
+    behavior: "smooth",
+    left: 0,
+    // brought the entire input element to the screen
+    top: inputRect.top + innerHeight / 1.5,
+  });
+  const scroll = () => {
+    commentInput?.querySelector("textarea")?.focus();
+  };
+  window.addEventListener("scrollend", scroll);
+
+  setTimeout(() => {
+    window.removeEventListener("scrollend", scroll);
+  }, 1000);
+}
+
 export default function BlogDetail() {
   const [data, setData] = useState<BlogDetail | null>(null);
   const [tags, setTags] = useState<Tag[]>([]);
@@ -54,7 +75,7 @@ export default function BlogDetail() {
     }
 
     getData();
-  }, [id]);
+  }, [blog_id]);
 
   if (!data) return;
 
@@ -94,8 +115,9 @@ export default function BlogDetail() {
               <Button
                 variant="secondary"
                 leftIcon={<Icon src={"/assets/svg/chat_bubble.svg"} />}
+                onClick={scrollToCommentInput}
               >
-                <a href="#comment_input">Comment</a>
+                Comment
               </Button>
               <Button
                 variant="secondary"
