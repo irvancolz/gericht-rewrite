@@ -3,6 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 import { Topnav } from "../components";
 import { useEffect, useState } from "react";
+import { UserContextprovider } from "@/components/context";
 
 export default function RootLayout({
   children,
@@ -13,19 +14,16 @@ export default function RootLayout({
 
   useEffect(() => {
     setPageLoaded(true);
-    // async function getData() {
-    //   const resp = await getComment(1);
-    //   console.log(resp);
-    // }
-    // getData();
   }, []);
 
   return (
     <html lang="en">
       <body>
-        <Topnav />
-        {isPageLoaded && children}
-        <div id="modal_container"></div>
+        <UserContextprovider>
+          <Topnav />
+          {isPageLoaded && children}
+          <div id="modal_container"></div>
+        </UserContextprovider>
       </body>
     </html>
   );
