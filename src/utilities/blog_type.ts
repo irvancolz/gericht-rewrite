@@ -22,7 +22,12 @@ export type Comment = {
   id: number;
   author: number;
   comment: string;
-  date: string;
+  created_at: string;
+};
+
+export type CommentInput = Pick<Comment, "author" | "comment"> & {
+  parent_id?: number;
+  blog_id: number;
 };
 
 export type Tag = {

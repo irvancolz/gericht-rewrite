@@ -1,12 +1,13 @@
 import { supabase } from "./supabase";
-import { Comment } from "../blog_type";
+import { Comment, CommentInput } from "../blog_type";
 
 export async function getComment(blog_id: number) {
   let { data, error } = await supabase
     .from("comments")
     .select("*")
     .eq("blog_id", blog_id)
-    .is("parent_id", null);
+    .is("parent_id", null)
+    .order("created_at", { ascending: false });
 
   if (error) console.log(error.message);
 
@@ -37,4 +38,17 @@ export async function getCommentReplies(id: number) {
   }
 
   return data as Comment[];
+}
+
+export async function createComment(comment: CommentInput) {
+  let { data, error } = await supabase
+    .from("comments")
+    .insert([comment])
+    .select()
+    .single();
+  if (error) {
+    console.log(error.message);
+    return null;
+  }
+  return data as Comment;
 }

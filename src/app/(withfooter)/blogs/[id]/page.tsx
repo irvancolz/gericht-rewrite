@@ -10,9 +10,18 @@ import {
   Images,
 } from "@/components";
 import Link from "next/link";
-import { Tag, type BlogDetail } from "@/utilities/blog_type";
-import { getBlog, getBlogTag } from "@/utilities/supabase";
-import { useParams, usePathname } from "next/navigation";
+import {
+  Tag,
+  type BlogDetail,
+  Comment as Comments,
+} from "@/utilities/blog_type";
+import {
+  getBlog,
+  getBlogTag,
+  getComment,
+  getCommentCount,
+} from "@/utilities/supabase";
+import { useParams } from "next/navigation";
 import { formatDate } from "@/utilities/date";
 import { getSupabasePublicUrl } from "@/utilities/supabase";
 
@@ -23,15 +32,25 @@ const Icon = ({ src }: { src: string }) => {
 export default function BlogDetail() {
   const [data, setData] = useState<BlogDetail | null>(null);
   const [tags, setTags] = useState<Tag[]>([]);
-
   const { id } = useParams();
+  const blog_id = parseInt(id as string);
+  const [comments, setComments] = useState<Comments[]>([]);
+  const [commentTotal, setComentTotal] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function getData() {
-      const tag = await getBlogTag(parseInt(id as string));
-      const data = await getBlog(parseInt(id as string));
+      const [comment, total, tag, data] = await Promise.all([
+        getComment(blog_id),
+        getCommentCount(blog_id),
+        getBlogTag(blog_id),
+        getBlog(blog_id),
+      ]);
+      setComments(() => comment);
+      setComentTotal(() => total?.count);
       setData(() => data);
       setTags(() => tag);
+      setLoading(false);
     }
 
     getData();
@@ -89,8 +108,8 @@ export default function BlogDetail() {
         </div>
         <BlogSidebar />
       </div>
-      <BlogComment />
-      <CommentInput />
+      <BlogComment commentTotal={commentTotal} comments={comments} />
+      <CommentInput updateComments={setComments} comments={comments} />
     </div>
   );
 }

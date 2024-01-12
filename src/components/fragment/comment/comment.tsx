@@ -5,10 +5,16 @@ import { Button, Images, Textarea } from "@/components";
 import { type Comment } from "@/utilities/blog_type";
 import { getCommentReplies, getUser } from "@/utilities/supabase";
 import { User } from "@/utilities/user_type";
+import { formatDate } from "@/utilities/date";
 
 const MAX_USER_COUNT = 100;
 
-export function Comment({ author: authorId, comment, date, id }: Comment) {
+export function Comment({
+  author: authorId,
+  comment,
+  created_at,
+  id,
+}: Comment) {
   const [openInput, setOpenInput] = useState<boolean>(false);
   const [replies, setReplies] = useState<Comment[]>([]);
   const [author, setAuthor] = useState<User>({} as User);
@@ -27,7 +33,6 @@ export function Comment({ author: authorId, comment, date, id }: Comment) {
   const imgUrl = `${process.env.NEXT_PUBLIC_RANDOM_USER_IMG || ""}${
     authorId % MAX_USER_COUNT
   }.jpg`;
-
   const authorFullName = `${author.first_name} ${author.last_name}`;
 
   useEffect(() => {
@@ -56,7 +61,7 @@ export function Comment({ author: authorId, comment, date, id }: Comment) {
           </Button>
         </div>
 
-        <p className={style.date}>{date}</p>
+        <p className={style.date}>{formatDate(created_at)}</p>
         <p className={style.comment}>{comment}</p>
 
         {/* add reply */}
