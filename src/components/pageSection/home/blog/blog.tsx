@@ -11,28 +11,28 @@ import Link from "next/link";
 
 const BLOGS_CONTENT: BlogCardProps[] = [
   {
-    id: "1",
+    id: 1,
     img: "/assets/png/blogs_img_1.png",
     author: "Annalisa L",
-    content:
+    spoiler:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
     created_at: "16 Apr 2021",
     title: "tips for prepping and caring for your grill",
   },
   {
-    id: "2",
+    id: 2,
     img: "/assets/png/blogs_img_2.png",
     author: "John Micheal",
-    content:
+    spoiler:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
     created_at: "23 May 2021",
     title: "summer cocktails and mocktails",
   },
   {
-    id: "3",
+    id: 3,
     img: "/assets/png/blogs_img_3.png",
     author: "Fred W",
-    content:
+    spoiler:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in.",
     created_at: "06 Aug 2021",
     title: "easy cooking for college students",

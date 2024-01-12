@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./blog_list.module.css";
-import { BlogContentProps } from "..";
 
 export type BlogListProps = {
   content: string[];
