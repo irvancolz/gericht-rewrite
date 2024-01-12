@@ -92,12 +92,15 @@
 }
 
 .reply_input_container[data-expand="true"] {
-  height: 14rem;
+  height: 17rem;
 }
 
 @container (max-width: 200px) {
   .container {
     flex-direction: column;
+  }
+  .reply_input_container[data-expand="true"] {
+    height: 20rem;
   }
 }
 
@@ -108,5 +111,8 @@
   .container {
     flex-wrap: nowrap;
     width: 100%;
+  }
+  .reply_input_container[data-expand="true"] {
+    height: 14rem;
   }
 }
