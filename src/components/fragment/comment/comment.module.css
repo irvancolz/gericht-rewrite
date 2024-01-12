@@ -41,6 +41,10 @@
   font-size: 1.5rem;
   font-family: var(--cormorant-font);
   font-weight: 700;
+  max-width: 7em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .header {
@@ -111,6 +115,9 @@
   .container {
     flex-wrap: nowrap;
     width: 100%;
+  }
+  .author {
+    max-width: none;
   }
   .reply_input_container[data-expand="true"] {
     height: 14rem;
