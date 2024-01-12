@@ -76,6 +76,15 @@
   margin-block: 1rem;
 }
 
+.err_msg {
+  color: red;
+  font-family: var(--cormorant-font);
+  font-weight: 500;
+  flex-basis: 100%;
+  font-size: 1rem;
+  margin-block: 0.5rem;
+}
+
 @container (max-width: 200px) {
   .container {
     flex-direction: column;

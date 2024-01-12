@@ -2,10 +2,16 @@
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 import style from "./comment.module.css";
 import { Button, Images, Textarea } from "@/components";
-import { type Comment } from "@/utilities/blog_type";
-import { getCommentReplies, getUser } from "@/utilities/supabase";
+import { Comment, CommentInput } from "@/utilities/blog_type";
+import {
+  createComment,
+  getCommentReplies,
+  getUser,
+} from "@/utilities/supabase";
 import { User } from "@/utilities/user_type";
 import { formatDate } from "@/utilities/date";
+import { useUserContext } from "@/components/context";
+import { useParams } from "next/navigation";
 
 const MAX_USER_COUNT = 100;
 
@@ -17,10 +23,29 @@ export function Comment({
 }: Comment) {
   const [openInput, setOpenInput] = useState<boolean>(false);
   const [replies, setReplies] = useState<Comment[]>([]);
+  const [validuser, setValiduser] = useState<boolean>(true);
   const [author, setAuthor] = useState<User>({} as User);
+  const { id: blogs_id } = useParams();
 
-  function addReplies(e: FormEvent) {
+  const userCtx = useUserContext();
+
+  async function addReplies(e: FormEvent) {
     e.preventDefault();
+    if (!userCtx || !userCtx.user) {
+      setValiduser(() => false);
+      return;
+    }
+
+    const reply: CommentInput = {
+      author: userCtx.user.id,
+      blog_id: parseInt(blogs_id as string),
+      comment: inputReplyRef.current?.value || "",
+      parent_id: id,
+    };
+    const newReply = await createComment(reply);
+    if (!newReply) return;
+    setReplies((e) => [...e, newReply]);
+    setOpenInput(() => false);
   }
 
   const inputReplyRef = useRef<HTMLTextAreaElement | null>(null);
@@ -84,6 +109,11 @@ export function Comment({
             >
               Cancel Reply
             </Button>
+            {!validuser && (
+              <p className={style.err_msg}>
+                Please fill your identify / have your data saved
+              </p>
+            )}
             <form className={style.reply} onSubmit={addReplies}>
               <Textarea
                 required

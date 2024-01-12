@@ -1,7 +1,7 @@
 "use client";
 import React, { FormEvent, useState } from "react";
 import style from "./comment_input.module.css";
-import { Button, Checkbox, Comment, Input, Textarea } from "@/components";
+import { Button, Checkbox, Input, Textarea } from "@/components";
 import { useUserContext } from "@/components/context";
 import { addUser, createComment, updateUser } from "@/utilities/supabase";
 import { useParams } from "next/navigation";
