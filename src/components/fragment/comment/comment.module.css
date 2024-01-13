@@ -123,3 +123,9 @@
     height: 14rem;
   }
 }
+
+@media (hover: hover) {
+  .content:not(:has(:focus)):hover {
+    background-color: var(--med-gray-bg-col);
+  }
+}

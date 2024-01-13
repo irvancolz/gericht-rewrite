@@ -25,6 +25,7 @@ export function Comment({
   const [replies, setReplies] = useState<Comment[]>([]);
   const [validuser, setValiduser] = useState<boolean>(true);
   const [author, setAuthor] = useState<User>({} as User);
+  const [expandReplies, setExpandReplies] = useState<boolean>(false);
   const { id: blogs_id } = useParams();
 
   const userCtx = useUserContext();
@@ -42,8 +43,10 @@ export function Comment({
       comment: inputReplyRef.current?.value || "",
       parent_id: id,
     };
+
     const newReply = await createComment(reply);
     if (!newReply) return;
+
     setReplies((e) => [...e, newReply]);
     setOpenInput(() => false);
   }
@@ -88,7 +91,6 @@ export function Comment({
 
         <p className={style.date}>{formatDate(created_at)}</p>
         <p className={style.comment}>{comment}</p>
-
         {/* add reply */}
         <div
           className={style.reply_input_container}
@@ -132,13 +134,27 @@ export function Comment({
           )}
         </div>
         {/* replies */}
-        {replies.length > 0 && (
-          <div className={style.replies_container}>
-            {replies.map((comment, i) => (
-              <Comment key={i} {...comment} />
-            ))}
-          </div>
+
+        {!expandReplies && replies.length > 0 && (
+          <Button
+            variant="secondary"
+            p={0}
+            className={style.btn}
+            onClick={() => setExpandReplies((e) => !e)}
+          >
+            See Replies
+          </Button>
         )}
+
+        <div className={style.replies_container} aria-expanded={expandReplies}>
+          {expandReplies && (
+            <>
+              {replies.map((comment, i) => (
+                <Comment key={i} {...comment} />
+              ))}
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
