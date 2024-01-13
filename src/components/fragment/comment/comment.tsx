@@ -82,7 +82,7 @@ export function Comment({
       <div className={style.content}>
         <div className={style.header}>
           <p className={style.author} data-focused={openInput}>
-            {authorFullName}
+            {authorFullName} {userCtx?.user?.id == authorId && ` (You)`}
           </p>
           <Button variant="secondary" onClick={openReplyInput}>
             Reply
