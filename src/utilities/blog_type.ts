@@ -1,4 +1,14 @@
-import { VideoSource } from "@/components";
+import {
+  BlogFlex,
+  BlogImage,
+  BlogList,
+  BlogListProps,
+  BlogQuote,
+  BlogSectionTitle,
+  BlogText,
+  BlogVideo,
+  VideoSource,
+} from "@/components";
 
 export type Blog = {
   id: number;
@@ -9,12 +19,33 @@ export type Blog = {
   img: string;
 };
 
-type BlogContentType = "list" | "text" | "title" | "qoute" | "video";
+type BlogContentType =
+  | "list"
+  | "text"
+  | "title"
+  | "qoute"
+  | "video"
+  | "flex"
+  | "image";
 
 export type BlogContent = {
   type: BlogContentType;
-  content: string | string[] | VideoSource[];
+  content: Parameters<
+    | typeof BlogList
+    | typeof BlogText
+    | typeof BlogSectionTitle
+    | typeof BlogQuote
+    | typeof BlogVideo
+    | typeof BlogFlex
+    | typeof BlogImage
+  >;
+  props?: any;
 };
+// export type BlogContent<T = string> = {
+//   type: BlogContentType;
+//   content: T;
+//   props?: any;
+// };
 
 export type BlogDetail = Blog & { content: BlogContent[]; category_id: number };
 

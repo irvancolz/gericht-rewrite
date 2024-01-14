@@ -7,7 +7,7 @@ export type ImagesProps = {
 } & ImageProps;
 
 export function Images({
-  className,
+  className = "",
   alt,
   fill,
   sizes,

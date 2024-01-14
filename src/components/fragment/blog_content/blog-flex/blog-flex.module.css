@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.container > * {
+  flex-basis: 50%;
+}

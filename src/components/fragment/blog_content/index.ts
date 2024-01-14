@@ -4,3 +4,5 @@ export * from "./blog-text";
 export * from "./blog-content";
 export * from "./blog-quote";
 export * from "./blog_video";
+export * from "./blog-image";
+export * from "./blog-flex";

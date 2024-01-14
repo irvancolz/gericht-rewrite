@@ -1,0 +1,14 @@
+.container {
+  position: relative;
+  width: 100%;
+  display: block;
+  max-width: 300px;
+}
+
+.fullwidth {
+  aspect-ratio: 16/9;
+}
+
+.square {
+  aspect-ratio: 1;
+}

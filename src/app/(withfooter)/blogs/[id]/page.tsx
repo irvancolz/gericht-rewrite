@@ -14,6 +14,7 @@ import {
   Tag,
   type BlogDetail,
   Comment as Comments,
+  BlogContent as BlogContentType,
 } from "@/utilities/blog_type";
 import {
   getBlog,
