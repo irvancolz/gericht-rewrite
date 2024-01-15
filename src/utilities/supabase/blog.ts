@@ -28,6 +28,7 @@ export async function getLatestBlog() {
       nullsFirst: false,
       ascending: false,
     })
+    .limit(1)
     .single();
 
   if (error) console.log("failed to get latest blog: ", error.message);
