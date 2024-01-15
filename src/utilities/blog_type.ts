@@ -23,7 +23,7 @@ type BlogContentType =
   | "list"
   | "text"
   | "title"
-  | "qoute"
+  | "quote"
   | "video"
   | "flex"
   | "image";

@@ -8,7 +8,7 @@ export async function getBlogTag(blog_id: number) {
     .eq("blog_id", blog_id);
 
   if (error) {
-    console.log(error.message);
+    console.log(`failed to get blogs ${blog_id} tag: `, error.message);
     return [];
   }
 
@@ -21,7 +21,7 @@ export async function getBlogTag(blog_id: number) {
       .single();
 
     if (error) {
-      console.log(error.message);
+      console.log(`failed to get ${tag_id} count: `, error.message);
       return;
     }
 
@@ -35,7 +35,7 @@ export async function getTags() {
   let { data: tags, error } = await supabase.from("tag").select("*");
 
   if (error) {
-    console.log(error.message);
+    console.log(`failed to get tags: `, error.message);
     return [];
   }
 

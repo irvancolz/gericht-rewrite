@@ -19,7 +19,7 @@ export async function getAllCategories() {
     )
     .order("id", { ascending: true });
 
-  if (error) console.log(error.message);
+  if (error) console.log("failed to get all blog categories: ", error.message);
 
   return categories as Categories[];
 }

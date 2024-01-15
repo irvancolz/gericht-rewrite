@@ -15,7 +15,7 @@ export async function getBlog(id: number) {
     .eq("id", id)
     .single();
 
-  if (error) console.log(error.message);
+  if (error) console.log("failed to get all blogs :", error.message);
 
   return data as BlogDetail;
 }
@@ -30,7 +30,7 @@ export async function getLatestBlog() {
     })
     .single();
 
-  if (error) console.log(error.message);
+  if (error) console.log("failed to get latest blog: ", error.message);
 
   return data as BlogDetail;
 }
