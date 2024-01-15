@@ -14,7 +14,6 @@ export type BlogImageProps = {
 
 export function BlogImage({ content, props }: BlogImageProps) {
   const variant = props ? props.variant : null;
-
   const variantClass = variant == "fullwidth" ? style.fullwidth : style.square;
 
   return (

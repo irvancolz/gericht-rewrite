@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   display: block;
-  max-width: 300px;
 }
 
 .fullwidth {
@@ -10,5 +9,6 @@
 }
 
 .square {
+  max-width: 300px;
   aspect-ratio: 1;
 }

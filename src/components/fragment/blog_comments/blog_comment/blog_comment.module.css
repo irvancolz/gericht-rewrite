@@ -9,6 +9,13 @@
   margin-bottom: 2rem;
 }
 
+.empty_placeholder {
+  padding: 1rem;
+  margin: auto;
+  color: var(--soft-gray-bg-col);
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 967px;

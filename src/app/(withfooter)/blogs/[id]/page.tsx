@@ -35,11 +35,12 @@ function scrollToCommentInput() {
   const inputRect = commentInput?.getBoundingClientRect();
 
   if (!inputRect) return;
+  const scrollTop = scrollY || document.documentElement.scrollTop;
   scrollTo({
     behavior: "smooth",
     left: 0,
     // brought the entire input element to the screen
-    top: inputRect.top + innerHeight / 1.5,
+    top: inputRect.top + scrollTop,
   });
   const scroll = () => {
     commentInput?.querySelector("textarea")?.focus();
@@ -103,7 +104,7 @@ export default function BlogDetail() {
           <div className={style.footer}>
             <nav aria-label="blog tags navigation">
               <ul className={style.tag_wrapper}>
-                {tags.map((tag, i) => {
+                {(tags || []).map((tag, i) => {
                   return (
                     <li key={i} className={style.tag}>
                       <Link href={"#"}>#{tag.name}</Link>
@@ -132,7 +133,7 @@ export default function BlogDetail() {
         <BlogSidebar />
       </div>
       <BlogComment commentTotal={commentTotal} comments={comments} />
-      <CommentInput updateComments={setComments} comments={comments} />
+      <CommentInput updateComments={setComments} comments={comments || []} />
     </div>
   );
 }

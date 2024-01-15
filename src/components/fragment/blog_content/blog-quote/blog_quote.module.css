@@ -7,6 +7,8 @@
   font-family: var(--cormorant-font);
   font-size: 2rem;
   background-color: var(--dark-gray-bg-col);
+  display: block;
+  margin-inline: auto;
 }
 
 .container::after,

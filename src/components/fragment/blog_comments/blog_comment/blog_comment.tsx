@@ -14,6 +14,9 @@ export function BlogComment({
     <div className={style.container}>
       <h3 className={style.title}>Comments({commentTotal})</h3>
       <div id="comments_container">
+        {comments.length <= 0 && (
+          <p className={style.empty_placeholder}>There is no comment yet.</p>
+        )}
         {comments.map((comment, i) => {
           return <Comment key={i} {...comment} />;
         })}
