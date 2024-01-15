@@ -69,6 +69,7 @@ export function Comment({
         getUser(authorId),
         getCommentReplies(id),
       ]);
+      if (!user) return;
       setAuthor(() => user);
       setReplies(() => reply);
     }

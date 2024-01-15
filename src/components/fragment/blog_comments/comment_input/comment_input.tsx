@@ -43,6 +43,7 @@ export function CommentInput({
       // create new user if the browser did not have any saved
       if (!userCtx.user) {
         const newUser = await addUser({ first_name, last_name });
+        if (!newUser) return;
         const userAuth: UserAuth = {
           id: newUser.id,
           role: "user",
