@@ -1,9 +1,11 @@
 import { supabase } from "./supabase";
 import { Comment, CommentInput } from "../blog_type";
 
+const COMMENT_TABLE = "comments";
+
 export async function getComment(blog_id: number) {
   let { data, error } = await supabase
-    .from("comments")
+    .from(COMMENT_TABLE)
     .select("*")
     .eq("blog_id", blog_id)
     .is("parent_id", null)
@@ -19,7 +21,7 @@ export async function getComment(blog_id: number) {
 
 export async function getCommentCount(blog_id: number) {
   let { data, error } = await supabase
-    .from("comments")
+    .from(COMMENT_TABLE)
     .select("count")
     .eq("blog_id", blog_id)
     .single();
@@ -37,7 +39,7 @@ export async function getCommentCount(blog_id: number) {
 
 export async function getCommentReplies(id: number) {
   let { data, error } = await supabase
-    .from("comments")
+    .from(COMMENT_TABLE)
     .select("*")
     .eq("parent_id", id);
 
@@ -51,7 +53,7 @@ export async function getCommentReplies(id: number) {
 
 export async function createComment(comment: CommentInput) {
   let { data, error } = await supabase
-    .from("comments")
+    .from(COMMENT_TABLE)
     .insert([comment])
     .select()
     .single();
@@ -59,5 +61,22 @@ export async function createComment(comment: CommentInput) {
     console.log(`failed to insert comment: `, error.message);
     return null;
   }
+  return data as Comment;
+}
+
+export async function deleteComments(id: number, user: number) {
+  let { data, error } = await supabase
+    .from(COMMENT_TABLE)
+    .delete()
+    .eq("id", id)
+    .eq("author", user)
+    .select()
+    .single();
+
+  if (error) {
+    console.log("failed to delete comments :", error.message);
+    return null;
+  }
+
   return data as Comment;
 }

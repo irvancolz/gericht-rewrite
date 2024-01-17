@@ -5,6 +5,7 @@ import { Button, Images, Textarea } from "@/components";
 import { Comment, CommentInput } from "@/utilities/blog_type";
 import {
   createComment,
+  deleteComments,
   getCommentReplies,
   getUser,
 } from "@/utilities/supabase";
@@ -14,6 +15,20 @@ import { useUserContext } from "@/components/context";
 import { useParams } from "next/navigation";
 
 const MAX_USER_COUNT = 100;
+
+function scrollToCommentSection() {
+  const commentInput = document.getElementById("comments_container");
+  const inputRect = commentInput?.getBoundingClientRect();
+
+  if (!inputRect) return;
+  const scrollTop = scrollY || document.documentElement.scrollTop;
+  scrollTo({
+    behavior: "smooth",
+    left: 0,
+    // brought the entire input element to the screen
+    top: inputRect.top + scrollTop,
+  });
+}
 
 export function Comment({
   author: authorId,
@@ -58,6 +73,12 @@ export function Comment({
     inputReplyRef.current?.focus();
   }
 
+  async function handleCommentDelete() {
+    const res = await deleteComments(id, userCtx?.user?.id!!);
+    if (!res) return;
+    location.reload();
+  }
+
   const imgUrl = `${process.env.NEXT_PUBLIC_RANDOM_USER_IMG || ""}${
     authorId % MAX_USER_COUNT
   }.jpg`;
@@ -85,9 +106,16 @@ export function Comment({
           <p className={style.author} data-focused={openInput}>
             {authorFullName} {userCtx?.user?.id == authorId && ` (You)`}
           </p>
-          <Button variant="secondary" onClick={openReplyInput}>
-            Reply
-          </Button>
+          <div>
+            {userCtx?.user?.id == authorId && (
+              <Button variant="secondary" onClick={handleCommentDelete}>
+                Delete
+              </Button>
+            )}
+            <Button variant="secondary" onClick={openReplyInput}>
+              Reply
+            </Button>
+          </div>
         </div>
 
         <p className={style.date}>{formatDate(created_at)}</p>
