@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   inset: 0 0 0 0;
-  background: url("../../../../../public/assets/png/blog_hero_img_1.png");
+  background: url("../../../../public/assets/png/blog_hero_img_1.png");
   background-size: cover;
   background-repeat: no-repeat;
   filter: brightness(0.4);
@@ -22,6 +22,7 @@
 .title {
   font-size: 5rem;
   color: var(--main-gold-bg-col);
+  text-transform: capitalize;
 }
 
 @media (min-width: 768px) {

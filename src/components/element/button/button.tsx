@@ -10,7 +10,7 @@ import style from "./button.module.css";
 import classNames from "classnames";
 
 export type ButtonProps = {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "outlined";
   leftIcon?: ReactNode;
   p?: number;
 } & PropsWithChildren &
@@ -19,7 +19,11 @@ export type ButtonProps = {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", leftIcon, children, p, ...rest }, ref) => {
     const buttonVarClass =
-      variant == "primary" ? style.primary : style.secondary;
+      variant == "outlined"
+        ? style.outlined
+        : variant == "secondary"
+        ? style.secondary
+        : style.primary;
 
     const localRef = useRef<HTMLButtonElement | null>(null);
     const btnRef = ref || localRef;

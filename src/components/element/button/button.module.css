@@ -33,6 +33,15 @@
   transition: color 120ms ease-in-out;
 }
 
+.outlined {
+  background-color: transparent;
+  font-family: var(--cormorant-font);
+  color: var(--white-bg-col);
+  border-color: var(--main-gold-bg-col);
+  border-width: 1px;
+  outline-color: var(--main-gold-bg-col);
+}
+
 @media (hover: hover) {
   .secondary:hover {
     color: var(--white-bg-col);
@@ -40,6 +49,10 @@
 
   .primary:hover {
     background-color: #e8c238;
+  }
+
+  .outlined:hover {
+    background-color: var(--soft-gold-bg-col);
   }
 }
 

@@ -1,13 +1,20 @@
 "use client";
 import React, { useLayoutEffect, useRef } from "react";
 import style from "./hero.module.css";
-import { BreadCrumbs } from "@/components";
+import { BreadCrumbs, BreadcrumbsProps } from "@/components";
 import gsap from "gsap";
 import SplitType from "split-type";
 
-export function BlogHero() {
-  const title = useRef<HTMLHeadingElement | null>(null);
+export type HeroWithBreadcrumbsProps = {
+  breadcrumbs: BreadcrumbsProps;
+  pageName: string;
+  bgImg?: string;
+};
 
+export function HeroWithBreadcrumbs({
+  breadcrumbs,
+  pageName,
+}: HeroWithBreadcrumbsProps) {
   useLayoutEffect(() => {
     const target = SplitType.create("[data-animation='heading']", {
       types: "words",
@@ -30,9 +37,9 @@ export function BlogHero() {
     <section className={style.container}>
       <div>
         <h1 className={style.title} data-animation="heading">
-          Our Blogs
+          {pageName}
         </h1>
-        <BreadCrumbs />
+        <BreadCrumbs {...breadcrumbs} />
       </div>
     </section>
   );

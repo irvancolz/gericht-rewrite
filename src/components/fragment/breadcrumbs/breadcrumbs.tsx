@@ -4,18 +4,11 @@ import style from "./breadcrumbs.module.css";
 import Link from "next/link";
 import gsap from "gsap";
 
-const BLOG_BREADCRUMBS_CONTENT = [
-  {
-    path: "/",
-    label: "Home",
-  },
-  {
-    path: "/blogs",
-    label: "Our Blogs - With Sidebar",
-  },
-];
+export type BreadcrumbsProps = {
+  paths: { path: string; label: string }[];
+};
 
-export function BreadCrumbs() {
+export function BreadCrumbs({ paths = [] }: BreadcrumbsProps) {
   const containerRef = useRef<HTMLUListElement | null>(null);
 
   useLayoutEffect(() => {
@@ -31,7 +24,7 @@ export function BreadCrumbs() {
 
   return (
     <ul className={style.container} ref={containerRef}>
-      {BLOG_BREADCRUMBS_CONTENT.map((path, i) => {
+      {paths.map((path, i) => {
         return (
           <li key={i} className={style.links}>
             <Link href={path.path}>{path.label}</Link>

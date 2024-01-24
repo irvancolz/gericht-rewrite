@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import style from "./sidebar.module.css";
 import {
   BlogCard,
-  BlogCardProps,
   BlogSidebarContent,
   Images,
   Loader,

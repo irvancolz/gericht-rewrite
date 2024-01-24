@@ -1,6 +1,7 @@
 .title,
 .desc {
   font-family: var(--cormorant-font);
+  text-transform: capitalize;
 }
 .container {
   display: flex;
@@ -23,7 +24,7 @@
   font-size: 2rem;
   color: var(--main-gold-bg-col);
   font-weight: 700;
-  line-height: 3rem;
+  line-height: 5rem;
 }
 
 .title {

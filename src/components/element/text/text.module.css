@@ -1,0 +1,10 @@
+.text {
+  color: var(--col, --white-bg-col);
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+  text-align: var(--align, left);
+}
+
+.text:hover {
+  opacity: 1;
+}

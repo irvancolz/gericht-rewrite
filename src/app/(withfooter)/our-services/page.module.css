@@ -1,0 +1,24 @@
+.serving_quality {
+  position: relative;
+  margin-inline: auto;
+  margin-block: 15rem 9rem;
+  max-width: 67rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.15rem;
+  align-items: center;
+}
+
+.text {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.actions {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+}
