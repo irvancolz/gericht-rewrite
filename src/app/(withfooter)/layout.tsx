@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.5,
-      easing: (x: number) => -(Math.cos(Math.PI * x) - 1) / 2,
+      easing: (x: number) => 1 - Math.pow(1 - x, 4),
     });
 
     function lenisRaf(time: number) {

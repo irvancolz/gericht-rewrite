@@ -12,7 +12,7 @@ export function CommentInput({
   updateComments,
   comments,
 }: {
-  updateComments: (a: Comments[]) => void;
+  updateComments?: (a: Comments[]) => void;
   comments: Comments[];
 }) {
   const userCtx = useUserContext();
@@ -59,7 +59,8 @@ export function CommentInput({
           author: newUser.id,
         });
         if (!newComment) return;
-        updateComments([...comments, newComment]);
+        // updateComments([...comments, newComment]);
+        comments.push(newComment);
         return;
       }
 
@@ -76,7 +77,8 @@ export function CommentInput({
         author: userCtx.user.id,
       });
       if (!newComment) return;
-      updateComments([...comments, newComment]);
+      // updateComments([...comments, newComment]);
+      comments.push(newComment);
     } catch (error) {
       console.log(error);
     } finally {

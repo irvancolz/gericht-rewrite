@@ -58,12 +58,6 @@
   flex-wrap: wrap;
 }
 
-.icon {
-  position: relative;
-  aspect-ratio: 1;
-  width: 1rem;
-}
-
 .date,
 .author {
   text-transform: capitalize;
