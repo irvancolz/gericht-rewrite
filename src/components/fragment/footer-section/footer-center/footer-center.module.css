@@ -35,6 +35,12 @@
   scale: 0.75;
 }
 
+.main_logo {
+  height: 83px;
+  width: 289px;
+  margin-inline: auto;
+}
+
 @media (min-width: 768px) {
   .container {
     margin-top: 0;

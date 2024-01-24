@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import style from "./footer-center.module.css";
-import { Images, SocialMedia } from "@/components";
+import { Images, SocialMedia, Spoon } from "@/components";
 
 export function FooterCenterContent() {
   return (
@@ -10,8 +10,7 @@ export function FooterCenterContent() {
       <Images
         src={"/assets/svg/gericht-footer.svg"}
         alt="gericht"
-        height={83}
-        width={289}
+        className={style.main_logo}
       />
       <div className={style.tagline}>
         <p className="footer_tagline">
@@ -20,12 +19,7 @@ export function FooterCenterContent() {
           </span>
           <span className="taglines"> service of others.&rdquo;</span>
         </p>
-        <Images
-          src={"/assets/svg/spoon.svg"}
-          alt="spoon"
-          width={43}
-          height={9}
-        />
+        <Spoon />
         <SocialMedia />
       </div>
     </div>
