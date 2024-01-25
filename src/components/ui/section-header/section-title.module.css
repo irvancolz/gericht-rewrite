@@ -24,7 +24,6 @@
   font-size: 2rem;
   color: var(--main-gold-bg-col);
   font-weight: 700;
-  line-height: var(--line-h);
 }
 
 .title {
@@ -42,5 +41,6 @@
   }
   .desc {
     font-size: var(--fs);
+    line-height: var(--line-h);
   }
 }
