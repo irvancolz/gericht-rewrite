@@ -11,3 +11,4 @@ export * from "./testimony";
 export * from "./resto_view";
 export * from "./awards";
 export * from "./photo_galery";
+export * from "./happy_hours";

@@ -17,7 +17,7 @@ const mainNavLink = [
   },
   {
     href: "/contact",
-    label: "Contact",
+    label: "Contact Us",
   },
   {
     href: "/blog",

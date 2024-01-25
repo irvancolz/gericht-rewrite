@@ -1,5 +1,5 @@
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   position: relative;
@@ -37,7 +37,7 @@
 
 @media (min-width: 768px) {
   .container {
-    translate: 0 -8rem;
+    translate: 0 -4rem;
   }
   .content_wrapper {
     flex-direction: row;

@@ -24,7 +24,7 @@
   font-size: 2rem;
   color: var(--main-gold-bg-col);
   font-weight: 700;
-  line-height: 5rem;
+  line-height: var(--line-h);
 }
 
 .title {
@@ -41,6 +41,6 @@
     font-size: 1.45rem;
   }
   .desc {
-    font-size: 4rem;
+    font-size: var(--fs);
   }
 }

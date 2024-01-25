@@ -1,17 +1,22 @@
 "use client";
-import React, { HTMLAttributes, useRef, useState } from "react";
+import React, { ComponentProps, HTMLAttributes, useRef, useState } from "react";
 import style from "./resto_video.module.css";
 
 export type VideoSource = { src: string; type: string };
 
-export interface VideoProps
-  extends Omit<HTMLAttributes<HTMLVideoElement>, "content"> {
+export type VideoProps = {
   content: VideoSource[];
-}
+  withToggle?: boolean;
+} & Omit<ComponentProps<"video">, "content">;
 
-export function Video({ content }: VideoProps) {
+export function Video({
+  content,
+  withToggle,
+  className = "",
+  ...rest
+}: VideoProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isVideoPlayed, setVideoPlayed] = useState<boolean>(false);
+  const [isVideoPlayed, setVideoPlayed] = useState<boolean>(!withToggle);
 
   function playVideo() {
     videoRef.current?.play();
@@ -32,23 +37,26 @@ export function Video({ content }: VideoProps) {
   }
 
   return (
-    <div className={style.container}>
+    <div className={`${style.container} ${className}`}>
       <video
         ref={videoRef}
         muted
         onClick={toggleVidePlay}
         onEnded={() => setVideoPlayed(false)}
+        {...rest}
       >
         {content.map((vid, i) => {
           return <source key={i} src={vid.src} type={vid.type} />;
         })}
         your browser did not support for webm / mp4 video
       </video>
-      <button
-        className={style.play_btn}
-        onClick={toggleVidePlay}
-        data-play={isVideoPlayed}
-      ></button>
+      {withToggle && (
+        <button
+          className={style.play_btn}
+          onClick={toggleVidePlay}
+          data-play={isVideoPlayed}
+        ></button>
+      )}
     </div>
   );
 }

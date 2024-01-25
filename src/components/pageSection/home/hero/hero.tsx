@@ -75,6 +75,7 @@ export function HomeHero() {
             align="left"
             desc="The key to Fine dining"
             title="Chase the new Flavour"
+            size="lg"
           />
           <p className={`${style.hero_desc} home_hero_desc`}>
             Sit tellus lobortis sed senectus vivamus molestie. Condimentum

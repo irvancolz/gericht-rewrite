@@ -1,6 +1,7 @@
 import {
   BreadcrumbsProps,
   Button,
+  HappyHours,
   MenuGroup,
   Reservation,
   SectionTitle,
@@ -46,6 +47,7 @@ export default function Page() {
       </div>
       <MenuGroup />
       <Reservation />
+      <HappyHours />
     </>
   );
 }

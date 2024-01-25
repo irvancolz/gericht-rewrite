@@ -1,0 +1,46 @@
+.container {
+  width: 100vw;
+  aspect-ratio: 16/9;
+  position: relative;
+  margin-bottom: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.video {
+  filter: brightness(0.7);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.title,
+.desc {
+  font-family: var(--cormorant-font);
+}
+
+.title {
+  color: var(--main-gold-bg-col);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.desc {
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-bottom: 9rem;
+  }
+  .title {
+    font-size: 8rem;
+  }
+  .desc {
+    font-size: 2rem;
+  }
+}
