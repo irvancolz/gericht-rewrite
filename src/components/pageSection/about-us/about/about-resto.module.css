@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desc {
+  color: var(--soft-gray-bg-col);
+  margin-block: 2rem 4rem;
+  text-align: center;
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .desc {
+    width: 60%;
+  }
+}

@@ -1,4 +1,10 @@
-import { ChefWord, PhotoGalery, Testimony, RestoHistory } from "@/components";
+import {
+  ChefWord,
+  PhotoGalery,
+  Testimony,
+  RestoHistory,
+  AboutResto,
+} from "@/components";
 import { HeroWithBreadcrumbs } from "@/components/ui/hero_with_breadcrumbs";
 import React from "react";
 
@@ -21,6 +27,7 @@ export default function Page() {
         pageName="Welcome to Gerícht"
       />
       <RestoHistory />
+      <AboutResto />
       <ChefWord />
       <Testimony />
       <PhotoGalery />
