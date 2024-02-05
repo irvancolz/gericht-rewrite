@@ -23,6 +23,11 @@
   font-size: 5rem;
   color: var(--main-gold-bg-col);
   text-transform: capitalize;
+  text-align: center;
+}
+
+.content ul {
+  margin-inline: auto;
 }
 
 @media (min-width: 768px) {

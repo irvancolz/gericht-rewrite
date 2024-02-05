@@ -39,6 +39,7 @@
 .desc {
   color: var(--soft-gray-bg-col);
   margin-bottom: 3rem;
+  flex-basis: 50%;
 }
 
 .counter {
@@ -109,5 +110,6 @@
   }
   .desc {
     flex-shrink: 1;
+    flex-basis: auto;
   }
 }

@@ -35,7 +35,7 @@ export function HeroWithBreadcrumbs({
 
   return (
     <section className={style.container}>
-      <div>
+      <div className={style.content}>
         <h1 className={style.title} data-animation="heading">
           {pageName}
         </h1>
