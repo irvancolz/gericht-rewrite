@@ -12,7 +12,7 @@ const mainNavLink = [
     label: "Home",
   },
   {
-    href: "/pages",
+    href: "/our-services",
     label: "Pages",
   },
   {
@@ -24,7 +24,7 @@ const mainNavLink = [
     label: "Blog",
   },
   {
-    href: "/landing",
+    href: "/about-us",
     label: "Landing",
   },
 ];
