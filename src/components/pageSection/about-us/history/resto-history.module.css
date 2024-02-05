@@ -1,13 +1,13 @@
 .content {
   display: flex;
   gap: 3rem;
+  flex-direction: column-reverse;
   margin-top: 4rem;
 }
 
-.content > * {
-  flex-basis: 50%;
-  max-width: 50%;
-  justify-content: space-between;
+.left {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .right {
@@ -43,7 +43,7 @@
 
 .counter {
   display: flex;
-  gap: 8rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -67,7 +67,7 @@
   background-color: var(--bg-col);
   display: block;
   position: absolute;
-  right: -4rem;
+  right: -2rem;
   top: 50%;
   translate: 0 -25%;
 }
@@ -92,4 +92,22 @@
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   border-bottom: 25px solid var(--bg-col);
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
+  .counter {
+    gap: 8rem;
+  }
+  .separator {
+    right: -4rem;
+  }
+  .left {
+    flex-direction: column;
+  }
+  .desc {
+    flex-shrink: 1;
+  }
 }
