@@ -2,12 +2,10 @@ import {
   BlogFlex,
   BlogImage,
   BlogList,
-  BlogListProps,
   BlogQuote,
   BlogSectionTitle,
   BlogText,
   BlogVideo,
-  VideoSource,
 } from "@/components";
 
 export type Blog = {
@@ -41,11 +39,6 @@ export type BlogContent = {
   >;
   props?: any;
 };
-// export type BlogContent<T = string> = {
-//   type: BlogContentType;
-//   content: T;
-//   props?: any;
-// };
 
 export type BlogDetail = Blog & { content: BlogContent[]; category_id: number };
 

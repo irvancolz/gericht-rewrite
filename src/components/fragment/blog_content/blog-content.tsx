@@ -8,9 +8,9 @@ import {
   BlogText,
   BlogVideo,
 } from ".";
-import { BlogContent } from "@/utilities/blog_type";
+import { BlogContent as BlogContentType } from "@/utilities/blog_type";
 
-export function BlogContent({ content, type, props }: BlogContent) {
+export function BlogContent({ content, type, props }: BlogContentType) {
   switch (type) {
     case "list":
       return <BlogList content={content as unknown as string[]} />;
@@ -21,7 +21,7 @@ export function BlogContent({ content, type, props }: BlogContent) {
     case "video":
       return <BlogVideo content={content as unknown as VideoSource[]} />;
     case "flex":
-      return <BlogFlex content={content as unknown as BlogContent[]} />;
+      return <BlogFlex content={content as unknown as BlogContentType[]} />;
     case "image":
       return <BlogImage content={content as unknown as string} props={props} />;
     default:
